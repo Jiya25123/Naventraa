@@ -1,0 +1,2546 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Naventra | Teacher Portal</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body class="teacher-portal-page">
+
+
+    <!-- ========================================
+         TEACHER HEADER
+    ======================================== -->
+
+    <header class="teacher-header">
+
+        <button
+            type="button"
+            class="teacher-menu-btn"
+            id="teacherMenuBtn"
+            aria-label="Open teacher menu"
+        >
+            ☰
+        </button>
+
+
+        <div class="teacher-header-title">
+
+            <h1 id="teacherPageTitle">
+                Dashboard
+            </h1>
+
+        </div>
+
+
+        <div class="teacher-header-actions">
+
+            <!-- DARK MODE -->
+
+            <button
+                type="button"
+                class="teacher-icon-btn"
+                id="teacherThemeToggle"
+                aria-label="Toggle dark mode"
+            >
+                🌙
+            </button>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <button
+                type="button"
+                class="teacher-icon-btn teacher-notification-btn"
+                id="teacherNotificationBtn"
+                aria-label="Notifications"
+            >
+
+                🔔
+
+                <span
+                    id="teacherNotificationBadge"
+                    class="teacher-notification-badge"
+                >
+                    0
+                </span>
+
+            </button>
+
+
+            <!-- PROFILE -->
+
+            <button
+                type="button"
+                class="teacher-profile-btn"
+                id="teacherProfileBtn"
+                aria-label="Open profile"
+            >
+
+                <span id="teacherProfileInitials">
+                    TC
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ========================================
+         TEACHER SIDEBAR
+    ======================================== -->
+
+    <aside
+        class="teacher-sidebar"
+        id="teacherSidebar"
+    >
+
+
+        <!-- BRAND -->
+
+        <div class="teacher-sidebar-brand">
+
+            <div class="teacher-logo-icon">
+                N
+            </div>
+
+            <strong>
+                NAVENTRA
+            </strong>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="teacher-sidebar-nav">
+
+
+            <!-- DASHBOARD -->
+
+            <button
+                type="button"
+                class="teacher-sidebar-link active"
+                data-page="teacher-dashboard"
+                data-title="Dashboard"
+            >
+                🏠
+                <span>Dashboard</span>
+            </button>
+
+
+            <!-- LOST & FOUND -->
+
+            <button
+                type="button"
+                class="teacher-sidebar-link"
+                data-page="teacher-lost-found"
+                data-title="Lost & Found"
+            >
+                🔍
+                <span>Lost & Found</span>
+            </button>
+
+
+            <!-- UPLOAD FOUND ITEM -->
+
+            <button
+                type="button"
+                class="teacher-sidebar-link"
+                data-page="teacher-upload-item"
+                data-title="Upload Found Item"
+            >
+                📤
+                <span>Upload Found Item</span>
+            </button>
+
+
+            <!-- CLAIM VERIFICATION -->
+
+            <button
+                type="button"
+                class="teacher-sidebar-link"
+                data-page="teacher-claims"
+                data-title="Claim Verification"
+            >
+                ✅
+                <span>Claim Verification</span>
+            </button>
+
+
+            <!-- RESOURCES -->
+
+            <button
+                type="button"
+                class="teacher-sidebar-link"
+                data-page="teacher-resources"
+                data-title="Resources"
+            >
+                📚
+                <span>Resources</span>
+            </button>
+
+
+            <!-- ANNOUNCEMENTS -->
+
+            <button
+                type="button"
+                class="teacher-sidebar-link"
+                data-page="teacher-announcements"
+                data-title="Announcements"
+            >
+                📢
+                <span>Announcements</span>
+            </button>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <button
+                type="button"
+                class="teacher-sidebar-link"
+                data-page="teacher-notifications"
+                data-title="Notifications"
+            >
+                🔔
+                <span>Notifications</span>
+            </button>
+
+
+            <!-- PROFILE -->
+
+            <button
+                type="button"
+                class="teacher-sidebar-link"
+                data-page="teacher-profile"
+                data-title="Profile"
+            >
+                👤
+                <span>Profile</span>
+            </button>
+
+
+        </nav>
+
+
+
+        <!-- SIDEBAR PROFILE -->
+
+        <div class="teacher-sidebar-profile">
+
+            <div class="teacher-profile-avatar">
+
+                <span id="teacherSidebarInitials">
+                    TC
+                </span>
+
+            </div>
+
+
+            <div class="teacher-profile-info">
+
+                <strong id="teacherSidebarName">
+                    Teacher
+                </strong>
+
+                <small id="teacherSidebarEmail">
+                    teacher@naventra.com
+                </small>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="teacherLogoutBtn"
+                class="teacher-logout-btn"
+                aria-label="Log out"
+            >
+                ↪
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ========================================
+         MAIN CONTENT
+    ======================================== -->
+
+    <main class="teacher-main">
+
+
+        <!-- ====================================
+             1. DASHBOARD
+        ==================================== -->
+
+        <section
+            id="teacher-dashboard"
+            class="teacher-section active"
+        >
+
+
+            <!-- WELCOME -->
+
+            <div class="teacher-welcome-card">
+
+                <div>
+
+                    <span class="teacher-section-label">
+                        TEACHER PORTAL
+                    </span>
+
+
+                    <h2>
+                        Welcome back,
+                        <span id="teacherName">
+                            Teacher
+                        </span>
+                        👋
+                    </h2>
+
+
+                    <p>
+                        Review claims, upload found items,
+                        and guide your students.
+                    </p>
+
+                </div>
+
+
+                <div class="teacher-welcome-icon">
+                    🧑‍🏫
+                </div>
+
+            </div>
+
+
+
+            <!-- QUICK ACTIONS -->
+
+            <section class="teacher-dashboard-section">
+
+                <div class="teacher-section-header">
+
+                    <div>
+
+                        <span class="teacher-section-label">
+                            QUICK ACTIONS
+                        </span>
+
+                        <h2>
+                            Manage Lost & Found
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="teacher-quick-actions">
+
+
+                    <button
+                        type="button"
+                        class="teacher-action-card"
+                        data-page="teacher-upload-item"
+                    >
+
+                        <span>
+                            📤
+                        </span>
+
+                        <strong>
+                            Upload Found Item
+                        </strong>
+
+                        <small>
+                            Add an officially found item
+                            to the school system.
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="teacher-action-card"
+                        data-page="teacher-claims"
+                    >
+
+                        <span>
+                            ✅
+                        </span>
+
+                        <strong>
+                            Verify Claims
+                        </strong>
+
+                        <small>
+                            Review and manage student claims.
+                        </small>
+
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- STATISTICS -->
+
+            <section class="teacher-dashboard-section">
+
+                <div class="teacher-section-header">
+
+                    <div>
+
+                        <span class="teacher-section-label">
+                            OVERVIEW
+                        </span>
+
+                        <h2>
+                            Portal Statistics
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="teacher-stats-grid">
+
+
+                    <!-- TOTAL ITEMS -->
+
+                    <div class="teacher-stat-card">
+
+                        <div class="teacher-stat-icon">
+                            📦
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Items
+                            </span>
+
+                            <strong id="teacherTotalItems">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PENDING CLAIMS -->
+
+                    <div class="teacher-stat-card">
+
+                        <div class="teacher-stat-icon">
+                            📋
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Pending Claims
+                            </span>
+
+                            <strong id="teacherPendingClaims">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MY UPLOADS -->
+
+                    <div class="teacher-stat-card">
+
+                        <div class="teacher-stat-icon">
+                            📤
+                        </div>
+
+                        <div>
+
+                            <span>
+                                My Uploads
+                            </span>
+
+                            <strong id="teacherMyUploads">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ANNOUNCEMENTS -->
+
+                    <div class="teacher-stat-card">
+
+                        <div class="teacher-stat-icon">
+                            📢
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Announcements
+                            </span>
+
+                            <strong id="teacherAnnouncementCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- CLAIMS NEEDING REVIEW -->
+
+            <section class="teacher-dashboard-section">
+
+                <div class="teacher-section-header">
+
+                    <div>
+
+                        <span class="teacher-section-label">
+                            ATTENTION NEEDED
+                        </span>
+
+                        <h2>
+                            Claims Needing Review
+                        </h2>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="teacher-view-all-btn"
+                        data-page="teacher-claims"
+                    >
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="teacherPendingClaimsList"
+                    class="teacher-dashboard-list"
+                >
+
+                    <div class="teacher-loading-state">
+                        Loading claims...
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- RECENT ITEMS -->
+
+            <section class="teacher-dashboard-section">
+
+                <div class="teacher-section-header">
+
+                    <div>
+
+                        <span class="teacher-section-label">
+                            LOST & FOUND
+                        </span>
+
+                        <h2>
+                            Recent Items
+                        </h2>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="teacher-view-all-btn"
+                        data-page="teacher-lost-found"
+                    >
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="teacherRecentItemsList"
+                    class="teacher-dashboard-list"
+                >
+
+                    <div class="teacher-loading-state">
+                        Loading recent items...
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </section>
+
+
+
+        <!-- ====================================
+             2. LOST & FOUND
+        ==================================== -->
+
+        
+<section
+    id="teacher-lost-found"
+    class="teacher-section"
+>
+
+    <!-- ====================================
+         LOST & FOUND HEADER
+    ==================================== -->
+
+    <div class="teacher-page-header">
+
+        <div>
+
+            <span class="teacher-section-label">
+                SCHOOL LOST & FOUND
+            </span>
+
+            <h2>
+                Lost & Found
+            </h2>
+
+            <p>
+                View and manage school-verified found items.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ====================================
+         SEARCH & FILTERS
+    ==================================== -->
+
+    <div class="teacher-lost-found-toolbar">
+
+        <div class="teacher-search-box">
+
+            <span>
+                🔎
+            </span>
+
+            <input
+                type="search"
+                id="teacherLostItemSearch"
+                placeholder="Search items..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <select
+            id="teacherLostItemCategory"
+            class="teacher-filter-select"
+        >
+
+            <option value="all">
+                All Categories
+            </option>
+
+            <option value="Electronics">
+                Electronics
+            </option>
+
+            <option value="Books">
+                Books
+            </option>
+
+            <option value="Water Bottles">
+                Water Bottles
+            </option>
+
+            <option value="Clothing">
+                Clothing
+            </option>
+
+            <option value="Stationery">
+                Stationery
+            </option>
+
+            <option value="ID Cards">
+                ID Cards
+            </option>
+
+            <option value="Accessories">
+                Accessories
+            </option>
+
+            <option value="Other">
+                Other
+            </option>
+
+        </select>
+
+
+        <select
+            id="teacherLostItemStatus"
+            class="teacher-filter-select"
+        >
+
+            <option value="all">
+                All Statuses
+            </option>
+
+            <option value="Found">
+                Found
+            </option>
+
+            <option value="Claim Pending">
+                Claim Pending
+            </option>
+
+            <option value="verified">
+                verified
+            </option>
+
+            <option value="Returned">
+                Returned
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- ====================================
+         ITEM COUNT
+    ==================================== -->
+
+    <div class="teacher-results-info">
+
+        <span id="teacherLostItemCount">
+            Loading items...
+        </span>
+
+    </div>
+
+
+    <!-- ====================================
+         ITEMS GRID
+    ==================================== -->
+
+    <div
+        id="teacherLostItemsGrid"
+        class="teacher-lost-items-grid"
+    >
+
+        <div class="teacher-loading-state">
+            Loading Lost & Found items...
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+       
+<!-- ====================================
+     3. UPLOAD FOUND ITEM
+==================================== -->
+
+<section
+    id="teacher-upload-item"
+    class="teacher-section"
+>
+
+    <div class="teacher-upload-page">
+
+        <!-- HEADER -->
+
+        <div class="teacher-page-header">
+
+            <span class="teacher-section-label">
+                LOST & FOUND
+            </span>
+
+            <h2>
+                Upload Found Item
+            </h2>
+
+            <p>
+                Add an officially found item to the
+                school's Lost & Found.
+            </p>
+
+        </div>
+
+
+        <!-- NOTICE -->
+
+        <div class="teacher-upload-notice">
+
+            <span>✓</span>
+
+            <div>
+                <strong>
+                    Official School Listing
+                </strong>
+
+                <p>
+                    This item will be marked as a
+                    verified school listing.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form
+            id="teacherUploadItemForm"
+            class="teacher-upload-form"
+        >
+
+            <!-- ITEM DETAILS -->
+
+            <div class="teacher-form-card">
+
+                <div class="teacher-form-card-header">
+
+                    <span>📦</span>
+
+                    <div>
+                        <h3>Item Details</h3>
+
+                        <p>
+                            Tell us about the item that was found.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="teacher-form-grid">
+
+                    <!-- ITEM NAME -->
+
+                    <div class="teacher-form-group">
+
+                        <label for="teacherItemName">
+                            Item Name
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="teacherItemName"
+                            placeholder="e.g. Blue Water Bottle"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="teacher-form-group">
+
+                        <label for="teacherItemCategory">
+                            Category
+                            <span>*</span>
+                        </label>
+
+                        <select
+                            id="teacherItemCategory"
+                            required
+                        >
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="Electronics">
+                                Electronics
+                            </option>
+
+                            <option value="Books">
+                                Books
+                            </option>
+
+                            <option value="Water Bottles">
+                                Water Bottles
+                            </option>
+
+                            <option value="Clothing">
+                                Clothing
+                            </option>
+
+                            <option value="Stationery">
+                                Stationery
+                            </option>
+
+                            <option value="ID Cards">
+                                ID Cards
+                            </option>
+
+                            <option value="Accessories">
+                                Accessories
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- LOCATION -->
+
+                    <div class="teacher-form-group">
+
+                        <label for="teacherItemLocation">
+                            Location Found
+                            <span>*</span>
+                        </label>
+
+                        <select
+                            id="teacherItemLocation"
+                            required
+                        >
+
+                            <option value="">
+                                Select location
+                            </option>
+
+                            <option>Main Building</option>
+                            <option>Library</option>
+                            <option>Science Block</option>
+                            <option>Sports Complex</option>
+                            <option>Cafeteria</option>
+                            <option>Auditorium</option>
+                            <option>Computer Lab</option>
+                            <option>Corridor A</option>
+                            <option>Corridor B</option>
+                            <option>School Grounds</option>
+                            <option>School Corridor</option>
+                            <option>Classroom</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- DATE -->
+
+                    <div class="teacher-form-group">
+
+                        <label for="teacherItemDate">
+                            Date Found
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="date"
+                            id="teacherItemDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- DESCRIPTION -->
+
+                    <div class="teacher-form-group teacher-form-full">
+
+                        <label for="teacherItemDescription">
+                            Description
+                            <span>*</span>
+                        </label>
+
+                        <textarea
+                            id="teacherItemDescription"
+                            rows="5"
+                            placeholder="Describe the item, including colour, brand, identifying features, or other useful details..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- ADDITIONAL NOTES -->
+
+                    <div class="teacher-form-group teacher-form-full">
+
+                        <label for="teacherItemNotes">
+                            Additional Notes
+                        </label>
+
+                        <textarea
+                            id="teacherItemNotes"
+                            rows="3"
+                            placeholder="Any additional information for students or staff..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            
+<!-- ========================================
+     ITEM IMAGE
+======================================== -->
+
+<div class="teacher-form-card">
+
+    <div class="teacher-form-card-header">
+
+        <span>🖼️</span>
+
+        <div>
+            <h3>Item Image</h3>
+
+            <p>
+                Add a clear photo of the found item.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="teacher-image-upload-box">
+
+        <div
+            class="teacher-image-upload-icon"
+            id="teacherImageUploadIcon"
+        >
+            📷
+        </div>
+
+        <strong>
+            Upload item photo
+        </strong>
+
+        <p>
+            Choose a clear image from your device.
+        </p>
+
+
+        <label
+            for="teacherItemImage"
+            class="teacher-upload-image-btn"
+        >
+            📷 Choose Image
+        </label>
+
+
+        <input
+            type="file"
+            id="teacherItemImage"
+            accept="image/*"
+            hidden
+        >
+
+
+        <div
+            id="teacherImagePreview"
+            class="teacher-image-preview"
+        ></div>
+
+
+        <small>
+            JPG, PNG, or WEBP • Optional
+        </small>
+
+    </div>
+
+</div>
+
+
+
+
+            <!-- FORM ACTIONS -->
+
+            <div class="teacher-upload-actions">
+
+                <button
+                    type="button"
+                    class="teacher-secondary-btn"
+                    data-page="teacher-lost-found"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="teacher-primary-small-btn"
+                >
+                    📤 Publish to Lost & Found
+                </button>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="teacherUploadMessage"
+                class="teacher-upload-message"
+            ></div>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+        
+<!-- ========================================
+     4. CLAIM VERIFICATION
+======================================== -->
+
+<section
+    id="teacher-claims"
+    class="teacher-section"
+>
+
+    <div class="teacher-claims-page">
+
+        <!-- PAGE HEADER -->
+
+        <div class="teacher-page-header">
+
+            <span class="teacher-section-label">
+                CLAIM VERIFICATION
+            </span>
+
+            <h2>
+                Review Student Claims
+            </h2>
+
+            <p>
+                Review Lost & Found claims and decide
+                whether each claim should be approved,
+                rejected, or needs more information.
+            </p>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="teacher-claims-stats">
+
+            <div class="teacher-claim-stat-card">
+
+                <span class="teacher-claim-stat-icon">
+                    📋
+                </span>
+
+                <div>
+                    <small>Pending</small>
+                    <strong id="teacherClaimsPendingCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="teacher-claim-stat-card">
+
+                <span class="teacher-claim-stat-icon">
+                    ✅
+                </span>
+
+                <div>
+                    <small>Verified</small>
+                    <strong id="teacherClaimsVerifiedCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="teacher-claim-stat-card">
+
+                <span class="teacher-claim-stat-icon">
+                    ❌
+                </span>
+
+                <div>
+                    <small>Rejected</small>
+                    <strong id="teacherClaimsRejectedCount">0</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FILTER BAR -->
+
+        <div class="teacher-claims-toolbar">
+
+            <div class="teacher-claims-search">
+
+                <span>🔍</span>
+
+                <input
+                    type="search"
+                    id="teacherClaimSearch"
+                    placeholder="Search student or item..."
+                >
+
+            </div>
+
+
+            <select
+                id="teacherClaimStatusFilter"
+                class="teacher-claims-filter"
+            >
+
+                <option value="all">
+                    All Claims
+                </option>
+
+                <option value="pending">
+                    Pending
+                </option>
+
+                <option value="verified">
+                    Verified
+                </option>
+
+                <option value="completed">
+                    Completed
+                </option>
+
+                <option value="rejected">
+                    Rejected
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- CLAIM COUNT -->
+
+        <div class="teacher-claims-list-header">
+
+            <div>
+                <strong>
+                    Claims
+                </strong>
+
+                <span id="teacherClaimsCount">
+                    0 claims
+                </span>
+            </div>
+
+        </div>
+
+
+        <!-- CLAIM LIST -->
+
+        <div
+            id="teacherClaimsList"
+            class="teacher-claims-list"
+        >
+
+            <div class="teacher-loading-state">
+                Loading claims...
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+        <!-- ====================================
+     5. RESOURCES
+==================================== -->
+
+<section
+    id="teacher-resources"
+    class="teacher-section"
+>
+
+    <div class="teacher-resources-page">
+
+        <!-- Header -->
+        <div class="teacher-resources-header">
+
+            <div>
+                <span class="teacher-section-label">
+                    LEARNING RESOURCES
+                </span>
+
+                <h2>
+                    Resources
+                </h2>
+
+                <p>
+                    Create and share helpful learning
+                    materials with your students.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="teacher-resource-add-btn"
+                id="openResourceFormBtn"
+            >
+                <span>＋</span>
+                Add Resource
+            </button>
+
+        </div>
+
+
+        <!-- Resource Form -->
+        <div
+            class="teacher-resource-form-card"
+            id="resourceFormCard"
+            style="display: none;"
+        >
+
+            <div class="teacher-resource-form-header">
+
+                <div>
+                    <h3>
+                        Add New Resource
+                    </h3>
+
+                    <p>
+                        Upload a learning material or share
+                        an external resource.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="teacher-resource-close-btn"
+                    id="closeResourceFormBtn"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="resourceForm">
+
+                <!-- Title -->
+                <div class="teacher-resource-form-group">
+
+                    <label for="resourceTitle">
+                        Resource Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="resourceTitle"
+                        placeholder="e.g. Quadratic Equations Revision"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Description -->
+                <div class="teacher-resource-form-group">
+
+                    <label for="resourceDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="resourceDescription"
+                        rows="4"
+                        placeholder="Briefly describe this resource..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Category + Type -->
+                <div class="teacher-resource-form-row">
+
+                    <div class="teacher-resource-form-group">
+
+                        <label for="resourceCategory">
+                            Category
+                        </label>
+
+                        <select
+                            id="resourceCategory"
+                            required
+                        >
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="Mathematics">
+                                Mathematics
+                            </option>
+
+                            <option value="Science">
+                                Science
+                            </option>
+
+                            <option value="English">
+                                English
+                            </option>
+
+                            <option value="Social Studies">
+                                Social Studies
+                            </option>
+
+                            <option value="Arabic">
+                                Arabic
+                            </option>
+
+                            <option value="Computer Science">
+                                Computer Science
+                            </option>
+
+                            <option value="General">
+                                General
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="teacher-resource-form-group">
+
+                        <label for="resourceType">
+                            Resource Type
+                        </label>
+
+                        <select
+                            id="resourceType"
+                            required
+                        >
+
+                            <option value="">
+                                Select type
+                            </option>
+
+                            <option value="PDF">
+                                PDF
+                            </option>
+
+                            <option value="Document">
+                                Document
+                            </option>
+
+                            <option value="Presentation">
+                                Presentation
+                            </option>
+
+                            <option value="Worksheet">
+                                Worksheet
+                            </option>
+
+                            <option value="Video">
+                                Video
+                            </option>
+
+                            <option value="Link">
+                                External Link
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Target Audience -->
+                <div class="teacher-resource-form-group">
+
+                    <label for="resourceAudience">
+                        Target Audience
+                    </label>
+
+                    <select
+                        id="resourceAudience"
+                        required
+                    >
+
+                        <option value="">
+                            Select target audience
+                        </option>
+
+                        <option value="All Students">
+                            All Students
+                        </option>
+
+                        <option value="Grade 9">
+                            Grade 9
+                        </option>
+
+                        <option value="Grade 10">
+                            Grade 10
+                        </option>
+
+                        <option value="Grade 11">
+                            Grade 11
+                        </option>
+
+                        <option value="Grade 12">
+                            Grade 12
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- File Upload -->
+                <div class="teacher-resource-form-group">
+
+                    <label for="resourceFile">
+                        Upload File
+                    </label>
+
+                    <div class="teacher-resource-upload-box">
+
+                        <div class="teacher-resource-upload-icon">
+                            📎
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Choose a file
+                            </strong>
+
+                            <span>
+                                PDF, DOCX, PPTX and other learning files
+                            </span>
+
+                        </div>
+
+                        <input
+                            type="file"
+                            id="resourceFile"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- External URL -->
+                <div class="teacher-resource-form-group">
+
+                    <label for="resourceExternalUrl">
+                        External URL
+                        <span>(optional)</span>
+                    </label>
+
+                    <input
+                        type="url"
+                        id="resourceExternalUrl"
+                        placeholder="https://example.com/resource"
+                    >
+
+                </div>
+
+
+                <!-- Publish -->
+                <div class="teacher-resource-publish-row">
+
+                    <div>
+
+                        <strong>
+                            Publish resource
+                        </strong>
+
+                        <span>
+                            Published resources will be visible
+                            to eligible students.
+                        </span>
+
+                    </div>
+
+                    <label class="teacher-resource-switch">
+
+                        <input
+                            type="checkbox"
+                            id="resourcePublished"
+                            checked
+                        >
+
+                        <span></span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Actions -->
+                <div class="teacher-resource-form-actions">
+
+                    <button
+                        type="button"
+                        class="teacher-resource-cancel-btn"
+                        id="cancelResourceBtn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="teacher-resource-submit-btn"
+                        id="saveResourceBtn"
+                    >
+                        Publish Resource
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <!-- Resource List -->
+        <div class="teacher-resources-list-section">
+
+            <div class="teacher-resources-list-header">
+
+                <div>
+
+                    <h3>
+                        Your Resources
+                    </h3>
+
+                    <p>
+                        Resources you have uploaded for students.
+                    </p>
+
+                </div>
+
+                <span
+                    id="teacherResourcesCount"
+                    class="teacher-resources-count"
+                >
+                    0 resources
+                </span>
+
+            </div>
+
+
+            <!-- Search -->
+            <div class="teacher-resources-toolbar">
+
+                <input
+                    type="search"
+                    id="teacherResourceSearch"
+                    placeholder="Search resources..."
+                >
+
+                <select id="teacherResourceCategoryFilter">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="Mathematics">
+                        Mathematics
+                    </option>
+
+                    <option value="Science">
+                        Science
+                    </option>
+
+                    <option value="English">
+                        English
+                    </option>
+
+                    <option value="Social Studies">
+                        Social Studies
+                    </option>
+
+                    <option value="Arabic">
+                        Arabic
+                    </option>
+
+                    <option value="Computer Science">
+                        Computer Science
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                id="teacherResourcesList"
+                class="teacher-resources-list"
+            >
+
+                <div class="teacher-resources-empty">
+
+                    <div class="teacher-resources-empty-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        No resources yet
+                    </h3>
+
+                    <p>
+                        Upload your first resource to share
+                        learning materials with students.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+        <!-- ====================================
+             6. ANNOUNCEMENTS
+        ==================================== -->
+
+        <section
+    id="teacher-announcements"
+    class="teacher-section"
+>
+
+    <div class="teacher-announcements-header">
+
+        <div>
+            <span class="section-label">
+                ANNOUNCEMENTS
+            </span>
+
+            <h2>
+                School Announcements
+            </h2>
+
+            <p>
+                Create and manage announcements for students.
+            </p>
+        </div>
+
+        <button
+            type="button"
+            id="openAnnouncementFormBtn"
+            class="teacher-primary-btn"
+        >
+            + New Announcement
+        </button>
+
+    </div>
+
+
+    <!-- ========================================
+         ANNOUNCEMENT FORM
+    ========================================= -->
+
+    <div
+        id="announcementFormCard"
+        class="announcement-form-card"
+        style="display:none;"
+    >
+
+        <div class="announcement-form-header">
+
+            <div>
+                <h3>Create Announcement</h3>
+
+                <p>
+                    Share an important update with students.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                id="closeAnnouncementFormBtn"
+                class="announcement-close-btn"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <form id="announcementForm">
+
+            <div class="announcement-form-grid">
+
+                <div class="announcement-field">
+
+                    <label for="announcementTitle">
+                        Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="announcementTitle"
+                        placeholder="Enter announcement title"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="announcement-field">
+
+                    <label for="announcementType">
+                        Category
+                    </label>
+
+                    <select
+                        id="announcementType"
+                        required
+                    >
+                        <option value="">
+                            Select category
+                        </option>
+
+                        <option value="General">
+                            General
+                        </option>
+
+                        <option value="Academic">
+                            Academic
+                        </option>
+
+                        <option value="Event">
+                            Event
+                        </option>
+
+                        <option value="Important">
+                            Important
+                        </option>
+
+                        <option value="Career">
+                            Career
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="announcement-field">
+
+                    <label for="announcementPriority">
+                        Priority
+                    </label>
+
+                    <select
+                        id="announcementPriority"
+                        required
+                    >
+                        <option value="normal">
+                            Normal
+                        </option>
+
+                        <option value="high">
+                            High
+                        </option>
+
+                        <option value="urgent">
+                            Urgent
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="announcement-field">
+
+                    <label for="announcementExpiry">
+                        Expiry Date
+                    </label>
+
+                    <input
+                        type="datetime-local"
+                        id="announcementExpiry"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="announcement-field">
+
+                <label for="announcementMessage">
+                    Announcement Message
+                </label>
+
+                <textarea
+                    id="announcementMessage"
+                    rows="6"
+                    placeholder="Write your announcement here..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="announcement-publish-row">
+
+                <label class="announcement-checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="announcementPublished"
+                        checked
+                    >
+
+                    <span>
+                        Publish announcement immediately
+                    </span>
+
+                </label>
+
+
+                <div class="announcement-form-actions">
+
+                    <button
+                        type="button"
+                        id="cancelAnnouncementBtn"
+                        class="teacher-secondary-btn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        id="saveAnnouncementBtn"
+                        class="teacher-primary-btn"
+                    >
+                        Publish Announcement
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="announcementFormMessage"
+                class="announcement-form-message"
+            ></div>
+
+        </form>
+
+    </div>
+
+
+    <!-- ========================================
+         SEARCH + FILTER
+    ========================================= -->
+
+    <div class="announcement-toolbar">
+
+        <div class="announcement-search-wrap">
+
+            <span>🔍</span>
+
+            <input
+                type="search"
+                id="teacherAnnouncementSearch"
+                placeholder="Search announcements..."
+            >
+
+        </div>
+
+
+        <select
+            id="teacherAnnouncementTypeFilter"
+            class="announcement-filter"
+        >
+            <option value="all">
+                All Categories
+            </option>
+
+            <option value="General">
+                General
+            </option>
+
+            <option value="Academic">
+                Academic
+            </option>
+
+            <option value="Event">
+                Event
+            </option>
+
+            <option value="Important">
+                Important
+            </option>
+
+            <option value="Career">
+                Career
+            </option>
+
+        </select>
+
+
+        <select
+            id="teacherAnnouncementStatusFilter"
+            class="announcement-filter"
+        >
+            <option value="all">
+                All Status
+            </option>
+
+            <option value="published">
+                Published
+            </option>
+
+            <option value="draft">
+                Draft
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="announcement-count-row">
+
+        <span id="teacherAnnouncementsCount">
+            0 announcements
+        </span>
+
+    </div>
+
+
+    <!-- ========================================
+         ANNOUNCEMENTS LIST
+    ========================================= -->
+
+    <div
+        id="teacherAnnouncementsList"
+        class="teacher-announcements-list"
+    >
+
+        <div class="teacher-loading-state">
+            Loading announcements...
+        </div>
+
+    </div>
+
+</section>
+
+
+
+        <!-- ========================================
+     TEACHER NOTIFICATIONS
+     ======================================== -->
+
+<section
+    id="teacher-notifications"
+    class="teacher-section"
+>
+
+    <div class="teacher-page-header">
+
+        <div>
+            <span class="teacher-page-eyebrow">
+                NOTIFICATIONS
+            </span>
+
+            <h1>
+                Notifications
+            </h1>
+
+            <p>
+                View and manage your notifications.
+            </p>
+        </div>
+
+        <button
+            type="button"
+            id="markAllNotificationsReadBtn"
+            class="teacher-notification-mark-all-btn"
+        >
+            ✓ Mark All as Read
+        </button>
+
+    </div>
+
+
+    <!-- ========================================
+         NOTIFICATION TOOLBAR
+         ======================================== -->
+
+    <div class="teacher-notification-toolbar">
+
+        <div class="teacher-notification-search">
+
+            <span>🔍</span>
+
+            <input
+                type="text"
+                id="teacherNotificationSearch"
+                placeholder="Search notifications..."
+            >
+
+        </div>
+
+
+        <select
+            id="teacherNotificationFilter"
+        >
+            <option value="all">
+                All Notifications
+            </option>
+
+            <option value="unread">
+                Unread
+            </option>
+
+            <option value="read">
+                Read
+            </option>
+        </select>
+
+    </div>
+
+
+    <!-- ========================================
+         NOTIFICATION COUNT
+         ======================================== -->
+
+    <div
+        id="teacherNotificationCount"
+        class="teacher-notification-count"
+    >
+        0 notifications
+    </div>
+
+
+    <!-- ========================================
+         NOTIFICATIONS LIST
+         ======================================== -->
+
+    <div
+        id="teacherNotificationsList"
+        class="teacher-notifications-list"
+    >
+
+        <div class="teacher-notifications-loading">
+            Loading notifications...
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- ========================================
+     TEACHER PROFILE
+======================================== -->
+
+<section
+    class="teacher-section"
+    id="teacher-profile"
+>
+
+    <div class="teacher-profile-page">
+
+        <!-- PAGE HEADER -->
+        <div class="teacher-profile-header">
+
+            <div>
+                <span class="teacher-profile-eyebrow">
+                    PROFILE
+                </span>
+
+                <h2>
+                    My Profile
+                </h2>
+
+                <p>
+                    View and manage your teacher account information.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="teacher-profile-edit-btn"
+                id="teacherProfileEditBtn"
+            >
+                ✏️ Edit Profile
+            </button>
+
+        </div>
+
+
+        <!-- PROFILE HERO -->
+        <div class="teacher-profile-hero">
+
+            <div class="teacher-profile-avatar" id="teacherProfileAvatar">
+                T
+            </div>
+
+            <div class="teacher-profile-hero-info">
+
+                <h3 id="teacherProfileName">
+                    Loading...
+                </h3>
+
+                <p id="teacherProfileEmail">
+                    Loading...
+                </p>
+
+                <span class="teacher-profile-role">
+                    👨‍🏫 Teacher
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROFILE INFORMATION -->
+        <div class="teacher-profile-grid">
+
+            <!-- PERSONAL INFORMATION -->
+            <div class="teacher-profile-card">
+
+                <div class="teacher-profile-card-header">
+
+                    <div class="teacher-profile-card-icon">
+                        👤
+                    </div>
+
+                    <div>
+                        <h3>
+                            Personal Information
+                        </h3>
+
+                        <p>
+                            Your basic profile details
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="teacher-profile-fields">
+
+                    <div class="teacher-profile-field">
+
+                        <label>
+                            Full Name
+                        </label>
+
+                        <div
+                            class="teacher-profile-value"
+                            id="teacherProfileFullName"
+                        >
+                            Loading...
+                        </div>
+
+                    </div>
+
+
+                    <div class="teacher-profile-field">
+
+                        <label>
+                            Email Address
+                        </label>
+
+                        <div
+                            class="teacher-profile-value"
+                            id="teacherProfileEmailValue"
+                        >
+                            Loading...
+                        </div>
+
+                    </div>
+
+
+                    <div class="teacher-profile-field">
+
+                        <label>
+                            Account Role
+                        </label>
+
+                        <div
+                            class="teacher-profile-value"
+                            id="teacherProfileRoleValue"
+                        >
+                            Teacher
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCOUNT INFORMATION -->
+            <div class="teacher-profile-card">
+
+                <div class="teacher-profile-card-header">
+
+                    <div class="teacher-profile-card-icon">
+                        🔐
+                    </div>
+
+                    <div>
+                        <h3>
+                            Account Information
+                        </h3>
+
+                        <p>
+                            Information about your Naventra account
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="teacher-profile-fields">
+
+                    <div class="teacher-profile-field">
+
+                        <label>
+                            Account Status
+                        </label>
+
+                        <div class="teacher-profile-status">
+                            <span></span>
+                            Active
+                        </div>
+
+                    </div>
+
+
+                    <div class="teacher-profile-field">
+
+                        <label>
+                            User ID
+                        </label>
+
+                        <div
+                            class="teacher-profile-value teacher-profile-user-id"
+                            id="teacherProfileUserId"
+                        >
+                            Loading...
+                        </div>
+
+                    </div>
+
+
+                    <div class="teacher-profile-field">
+
+                        <label>
+                            Member Since
+                        </label>
+
+                        <div
+                            class="teacher-profile-value"
+                            id="teacherProfileCreatedAt"
+                        >
+                            Loading...
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EDIT FORM -->
+        <div
+            class="teacher-profile-edit-card"
+            id="teacherProfileEditCard"
+            style="display:none;"
+        >
+
+            <div class="teacher-profile-card-header">
+
+                <div class="teacher-profile-card-icon">
+                    ✏️
+                </div>
+
+                <div>
+                    <h3>
+                        Edit Profile
+                    </h3>
+
+                    <p>
+                        Update your profile information.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="teacherProfileForm">
+
+                <div class="teacher-profile-form-group">
+
+                    <label for="teacherProfileNameInput">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="teacherProfileNameInput"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="teacher-profile-form-group">
+
+                    <label>
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="teacherProfileEmailInput"
+                        readonly
+                    >
+
+                    <small>
+                        Your login email cannot be changed here.
+                    </small>
+
+                </div>
+
+
+                <div
+                    class="teacher-profile-form-message"
+                    id="teacherProfileFormMessage"
+                ></div>
+
+
+                <div class="teacher-profile-form-actions">
+
+                    <button
+                        type="button"
+                        class="teacher-profile-cancel-btn"
+                        id="teacherProfileCancelBtn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="teacher-profile-save-btn"
+                        id="teacherProfileSaveBtn"
+                    >
+                        💾 Save Changes
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+    </main>
+
+
+
+    <!-- ========================================
+         SCRIPT
+    ======================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+<script src="teacher-dashboard.js"></script>
+
+</body>
+
+</html>
+```

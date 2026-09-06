@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login | Naventra</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="login-page">
+
+    <main class="login-container">
+
+
+        <!-- ========================================
+             LEFT SIDE
+        ======================================== -->
+
+        <section class="login-brand">
+
+            <div class="logo">
+
+                <span class="logo-icon">
+                    N
+                </span>
+
+                <span class="logo-text">
+                    Naventra
+                </span>
+
+            </div>
+
+
+            <div class="login-brand-content">
+
+                <div class="hero-badge">
+                    ✦ Smart School Platform
+                </div>
+
+
+                <h1>
+                    Welcome<br>
+                    <span>Back.</span>
+                </h1>
+
+
+                <p>
+                    Sign in to access your personalized
+                    Naventra experience.
+                </p>
+
+            </div>
+
+
+            <div class="login-brand-footer">
+                Navigate Today. Achieve Tomorrow.
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================
+             RIGHT SIDE
+        ======================================== -->
+
+        <section class="login-form-section">
+
+            <div class="login-form-wrapper">
+
+
+                <!-- MOBILE LOGO -->
+
+                <div class="mobile-logo">
+
+                    <div class="logo">
+
+                        <span class="logo-icon">
+                            N
+                        </span>
+
+                        <span class="logo-text">
+                            Naventra
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ====================================
+                     LOGIN HEADING
+                ==================================== -->
+
+                <div class="login-heading">
+
+                    <div class="section-label">
+                        WELCOME BACK
+                    </div>
+
+
+                    <h2 id="loginHeading">
+                        Sign in to Naventra
+                    </h2>
+
+
+                    <p id="loginDescription">
+                        Choose your portal and enter
+                        your school account details.
+                    </p>
+
+                </div>
+
+
+
+                <!-- ====================================
+                     PORTAL SELECTION
+                ==================================== -->
+
+                <div class="login-role-selection">
+
+                    <div class="login-role-label">
+                        Choose your portal
+                    </div>
+
+
+                    <div class="login-role-options">
+
+
+                        <!-- STUDENT -->
+
+                        <button
+                            type="button"
+                            class="login-role-btn active"
+                            data-role="student"
+                        >
+
+                            <span class="login-role-icon">
+                                🎓
+                            </span>
+
+                            <span>
+                                Student
+                            </span>
+
+                        </button>
+
+
+
+                        <!-- TEACHER -->
+
+                        <button
+                            type="button"
+                            class="login-role-btn"
+                            data-role="teacher"
+                        >
+
+                            <span class="login-role-icon">
+                                👩‍🏫
+                            </span>
+
+                            <span>
+                                Teacher
+                            </span>
+
+                        </button>
+
+
+
+                        <!-- ADMIN -->
+
+                        <button
+                            type="button"
+                            class="login-role-btn"
+                            data-role="admin"
+                        >
+
+                            <span class="login-role-icon">
+                                🛡️
+                            </span>
+
+                            <span>
+                                Admin
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ====================================
+                     LOGIN FORM
+                ==================================== -->
+
+                <form
+                    id="loginForm"
+                    onsubmit="handleLogin(event)"
+                >
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            School Email
+                        </label>
+
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your school email"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <div class="password-label">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+
+                            <a href="#">
+                                Forgot password?
+                            </a>
+
+                        </div>
+
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="login-submit"
+                        id="loginSubmit"
+                    >
+
+                        Sign In
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+
+                <!-- ====================================
+                     SCHOOL ACCOUNT NOTICE
+                ==================================== -->
+
+                <div class="login-divider">
+                    <span>or</span>
+                </div>
+
+
+                <div class="role-info">
+
+                    <div class="role-icon">
+                        🔐
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            School account only
+                        </strong>
+
+
+                        <p>
+                            Naventra access is provided by your
+                            school administration.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BACK HOME -->
+
+                <button
+                    type="button"
+                    class="back-home"
+                    onclick="window.location.href='index.html'"
+                >
+
+                    ← Back to Home
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+

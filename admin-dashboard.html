@@ -1,0 +1,2860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Naventra | Administrator Portal</title>
+
+    <link
+        rel="stylesheet"
+        href="admin-dashboard.css"
+    >
+</head>
+
+<body>
+
+    <!-- ========================================
+         SIDEBAR
+    ========================================= -->
+
+    <aside
+        class="admin-sidebar"
+        id="adminSidebar"
+    >
+
+        <div class="admin-brand">
+
+            <div class="admin-brand-icon">
+                N
+            </div>
+
+            <div>
+                <h2>Naventra</h2>
+                <span>Administrator Portal</span>
+            </div>
+
+        </div>
+
+
+        <nav class="admin-nav">
+
+            <button
+                class="admin-nav-link active"
+                data-page="admin-dashboard"
+                data-title="Administration"
+            >
+                <span>🏠</span>
+                <span>Dashboard</span>
+            </button>
+
+
+            <button
+                class="admin-nav-link"
+                data-page="admin-lost-found"
+                data-title="Lost & Found"
+            >
+                <span>🔍</span>
+                <span>Lost & Found</span>
+            </button>
+
+
+            <button
+                class="admin-nav-link"
+                data-page="admin-claims"
+                data-title="Claim Management"
+            >
+                <span>📋</span>
+                <span>Claim Management</span>
+            </button>
+
+
+            <button
+                class="admin-nav-link"
+                data-page="admin-users"
+                data-title="User Management"
+            >
+                <span>👥</span>
+                <span>User Management</span>
+            </button>
+
+
+            <button
+                class="admin-nav-link"
+                data-page="admin-announcements"
+                data-title="Announcements"
+            >
+                <span>📢</span>
+                <span>Announcements</span>
+            </button>
+
+
+            <button
+                class="admin-nav-link"
+                data-page="admin-events"
+                data-title="Events"
+
+            >
+                <span>📅</span>
+                <span>Events</span>
+            </button>
+
+
+            
+               <button
+    class="admin-nav-link"
+    data-page="admin-career-analytics"
+    data-title="Career Analytics"
+>
+    <span>📊</span>
+    <span>Career Analytics</span>
+</button>
+
+            <button
+                class="admin-nav-link"
+                data-page="admin-reports"
+                data-title="Reports"
+            >
+                <span>📑</span>
+                <span>Reports</span>
+            </button>
+
+
+            <button
+                class="admin-nav-link"
+                data-page="admin-profile"
+                data-title="Profile"
+            >
+                <span>👤</span>
+                <span>Profile</span>
+            </button>
+
+        </nav>
+
+
+        <div class="admin-sidebar-bottom">
+
+            <button
+                class="admin-bottom-btn"
+                id="adminNotificationBtn"
+            >
+                <span>🔔</span>
+                <span>Notifications</span>
+            </button>
+
+
+            <button
+                class="admin-bottom-btn"
+                id="adminDarkModeBtn"
+            >
+                <span>🌙</span>
+                <span>Dark Mode</span>
+            </button>
+
+
+            <button
+                class="admin-bottom-btn logout"
+                id="adminLogoutBtn"
+            >
+                <span>🚪</span>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ========================================
+         MOBILE HEADER
+    ========================================= -->
+
+    <header class="admin-mobile-header">
+
+        <button
+            id="adminMenuBtn"
+            class="admin-menu-btn"
+        >
+            ☰
+        </button>
+
+        <div>
+            <strong>Naventra</strong>
+            <span>Administrator</span>
+        </div>
+
+    </header>
+
+
+    <!-- ========================================
+         MAIN CONTENT
+    ========================================= -->
+
+    <main class="admin-main">
+
+        <header class="admin-topbar">
+
+            <div>
+
+                <span class="admin-section-label">
+                    ADMINISTRATION
+                </span>
+
+                <h1 id="adminPageTitle">
+                    Administration
+                </h1>
+
+                <p>
+                    School Platform Overview
+                </p>
+
+            </div>
+
+
+            <div class="admin-topbar-actions">
+
+                <button
+                    class="admin-icon-btn"
+                    id="topNotificationBtn"
+                    title="Notifications"
+                >
+                    🔔
+                </button>
+
+                <button
+                    class="admin-icon-btn"
+                    id="topDarkModeBtn"
+                    title="Dark Mode"
+                >
+                    🌙
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- ========================================
+             DASHBOARD PAGE
+        ========================================= -->
+
+        <section
+            class="admin-section active"
+            id="admin-dashboard"
+        >
+
+            <div class="admin-welcome">
+
+                <div>
+
+                    <span class="admin-section-label">
+                        SCHOOL PLATFORM OVERVIEW
+                    </span>
+
+                    <h2>
+                        Full oversight, all in one place.
+                    </h2>
+
+                    <p>
+                        Manage Lost & Found, claims, users,
+                        school communications and platform activity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="admin-quick-actions">
+
+                <button
+                    class="admin-action-card"
+                    data-page="admin-lost-found"
+                >
+
+                    <div class="admin-action-icon">
+                        🔍
+                    </div>
+
+                    <div>
+                        <strong>
+                            Manage Lost & Found
+                        </strong>
+
+                        <span>
+                            View and manage found items
+                        </span>
+                    </div>
+
+                    <span class="admin-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="admin-action-card"
+                    data-page="admin-announcements"
+                >
+
+                    <div class="admin-action-icon">
+                        📢
+                    </div>
+
+                    <div>
+                        <strong>
+                            Announcements
+                        </strong>
+
+                        <span>
+                            Manage school announcements
+                        </span>
+                    </div>
+
+                    <span class="admin-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+
+            <div class="admin-stat-grid">
+
+                <article class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        📦
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Items
+                        </span>
+
+                        <strong id="adminTotalItems">
+                            0
+                        </strong>
+
+                        <small>
+                            Lost & Found items
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        ↩️
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Returned
+                        </span>
+
+                        <strong id="adminReturnedItems">
+                            0
+                        </strong>
+
+                        <small>
+                            Successfully returned
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        📋
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Pending Claims
+                        </span>
+
+                        <strong id="adminPendingClaims">
+                            0
+                        </strong>
+
+                        <small>
+                            Waiting for verification
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        📊
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Recovery Rate
+                        </span>
+
+                        <strong id="adminRecoveryRate">
+                            0%
+                        </strong>
+
+                        <small>
+                            Items successfully recovered
+                        </small>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- LOWER DASHBOARD -->
+
+            <div class="admin-dashboard-grid">
+
+
+                <!-- CATEGORY -->
+
+                <article class="admin-panel">
+
+                    <div class="admin-panel-header">
+
+                        <div>
+
+                            <span class="admin-section-label">
+                                LOST & FOUND
+                            </span>
+
+                            <h3>
+                                Items by Category
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="admin-category-list"
+                        id="adminCategoryList"
+                    >
+
+                        <div class="admin-loading">
+                            Loading categories...
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- QUICK STATS -->
+
+                <article class="admin-panel">
+
+                    <div class="admin-panel-header">
+
+                        <div>
+
+                            <span class="admin-section-label">
+                                PLATFORM
+                            </span>
+
+                            <h3>
+                                Quick Stats
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-quick-stats">
+
+                        <button
+                            class="admin-mini-stat"
+                            data-page="admin-announcements"
+                        >
+
+                            <span>📢</span>
+
+                            <div>
+                                <strong id="adminAnnouncementCount">
+                                    0
+                                </strong>
+
+                                <small>
+                                    Announcements
+                                </small>
+                            </div>
+
+                        </button>
+
+
+                        <button
+                            class="admin-mini-stat"
+                            data-page="admin-events"
+                        >
+
+                            <span>📅</span>
+
+                            <div>
+                                <strong id="adminEventCount">
+                                    0
+                                </strong>
+
+                                <small>
+                                    Events
+                                </small>
+                            </div>
+
+                        </button>
+
+
+                        <button
+                            class="admin-mini-stat"
+                            data-page="admin-users"
+                        >
+
+                            <span>👥</span>
+
+                            <div>
+                                <strong id="adminUserCount">
+                                    0
+                                </strong>
+
+                                <small>
+                                    Users
+                                </small>
+                            </div>
+
+                        </button>
+
+
+                        <button
+                            class="admin-mini-stat"
+                            data-page="admin-claims"
+                        >
+
+                            <span>📋</span>
+
+                            <div>
+                                <strong id="adminTotalClaims">
+                                    0
+                                </strong>
+
+                                <small>
+                                    Total Claims
+                                </small>
+                            </div>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- RECENT CLAIMS -->
+
+            <article class="admin-panel admin-recent-panel">
+
+                <div class="admin-panel-header">
+
+                    <div>
+
+                        <span class="admin-section-label">
+                            CLAIM ACTIVITY
+                        </span>
+
+                        <h3>
+                            Recent Claim Activity
+                        </h3>
+
+                    </div>
+
+
+                    <button
+                        class="admin-view-all-btn"
+                        data-page="admin-claims"
+                    >
+                        View All →
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="admin-claims-table-wrap"
+                >
+
+                    <table class="admin-claims-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Item</th>
+                                <th>Student</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="adminRecentClaims">
+
+                            <tr>
+
+                                <td
+                                    colspan="4"
+                                    class="admin-table-loading"
+                                >
+                                    Loading recent claims...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+      
+
+        <!-- ========================================
+     ADMIN LOST & FOUND
+========================================= -->
+
+<!-- ========================================
+     ADMIN LOST & FOUND
+========================================= -->
+
+<section
+    class="admin-section"
+    id="admin-lost-found"
+>
+
+    <div class="admin-page-header">
+
+        <div>
+            <span class="admin-section-label">
+                LOST & FOUND MANAGEMENT
+            </span>
+
+            <h2>
+                Lost & Found
+            </h2>
+
+            <p>
+                View and manage all items reported through Naventra.
+            </p>
+        </div>
+
+        <button
+            type="button"
+            class="admin-primary-btn"
+            id="adminAddLostItemBtn"
+        >
+            + Add Found Item
+        </button>
+
+    </div>
+
+
+    <!-- STATISTICS -->
+
+    <div class="admin-lost-stats">
+
+        <div class="admin-lost-stat-card">
+            <span>📦</span>
+            <div>
+                <strong id="adminLostTotal">0</strong>
+                <small>Total Items</small>
+            </div>
+        </div>
+
+        <div class="admin-lost-stat-card">
+            <span>🔎</span>
+            <div>
+                <strong id="adminLostAvailable">0</strong>
+                <small>Available</small>
+            </div>
+        </div>
+
+        <div class="admin-lost-stat-card">
+            <span>📋</span>
+            <div>
+                <strong id="adminLostPending">0</strong>
+                <small>Claim Pending</small>
+            </div>
+        </div>
+
+        <div class="admin-lost-stat-card">
+            <span>↩️</span>
+            <div>
+                <strong id="adminLostReturned">0</strong>
+                <small>Returned</small>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH & FILTERS -->
+
+    <div class="admin-lost-toolbar">
+
+        <div class="admin-lost-search">
+
+            <span>🔍</span>
+
+            <input
+                type="search"
+                id="adminLostSearch"
+                placeholder="Search items, locations or descriptions..."
+            >
+
+        </div>
+
+
+        <select id="adminLostCategory">
+
+            <option value="all">
+                All Categories
+            </option>
+
+            <option value="Electronics">
+                Electronics
+            </option>
+
+            <option value="Books">
+                Books
+            </option>
+
+            <option value="Water">
+                Water
+            </option>
+
+            <option value="Clothing">
+                Clothing
+            </option>
+
+            <option value="Stationery">
+                Stationery
+            </option>
+
+            <option value="ID">
+                ID
+            </option>
+
+            <option value="Accessories">
+                Accessories
+            </option>
+
+            <option value="Other">
+                Other
+            </option>
+
+        </select>
+
+
+        <select id="adminLostStatus">
+
+            <option value="all">
+                All Status
+            </option>
+
+            <option value="Found">
+                Found
+            </option>
+
+            <option value="Claim Pending">
+                Claim Pending
+            </option>
+
+            <option value="Returned">
+                Returned
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="admin-lost-results-header">
+
+        <strong>
+            Lost & Found Items
+        </strong>
+
+        <span id="adminLostCount">
+            0 items
+        </span>
+
+    </div>
+
+
+    <!-- ITEMS -->
+
+    <div
+        class="admin-lost-grid"
+        id="adminLostGrid"
+    >
+
+        <div class="admin-loading">
+            Loading Lost & Found items...
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         ADD / EDIT ITEM MODAL
+    ========================================= -->
+
+    <div
+        class="admin-modal"
+        id="adminLostModal"
+    >
+
+        <div class="admin-modal-box">
+
+            <div class="admin-modal-header">
+
+                <div>
+
+                    <span class="admin-section-label">
+                        LOST & FOUND
+                    </span>
+
+                    <h3 id="adminLostModalTitle">
+                        Add Found Item
+                    </h3>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="admin-modal-close"
+                    id="adminLostModalClose"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="adminLostForm">
+
+                <input
+                    type="hidden"
+                    id="adminLostItemId"
+                >
+
+
+                <div class="admin-form-grid">
+
+                    <div class="admin-form-group">
+
+                        <label for="adminLostItemName">
+                            Item Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="adminLostItemName"
+                            placeholder="Example: Black Water Bottle"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label for="adminLostItemCategory">
+                            Category
+                        </label>
+
+                        <select
+                            id="adminLostItemCategory"
+                            required
+                        >
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="Electronics">
+                                Electronics
+                            </option>
+
+                            <option value="Books">
+                                Books
+                            </option>
+
+                            <option value="Water">
+                                Water
+                            </option>
+
+                            <option value="Clothing">
+                                Clothing
+                            </option>
+
+                            <option value="Stationery">
+                                Stationery
+                            </option>
+
+                            <option value="ID">
+                                ID
+                            </option>
+
+                            <option value="Accessories">
+                                Accessories
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label for="adminLostLocation">
+                            Location Found
+                        </label>
+
+                        <input
+                            type="text"
+                            id="adminLostLocation"
+                            placeholder="Example: School Library"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label for="adminLostDate">
+                            Date Found
+                        </label>
+
+                        <input
+                            type="date"
+                            id="adminLostDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label for="adminLostStatusInput">
+                            Status
+                        </label>
+
+                        <select
+                            id="adminLostStatusInput"
+                            required
+                        >
+
+                            <option value="Found">
+                                Found
+                            </option>
+
+                            <option value="Claim Pending">
+                                Claim Pending
+                            </option>
+
+                            <option value="Returned">
+                                Returned
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label for="adminLostImage">
+                            Image URL
+                        </label>
+
+                        <input
+                            type="url"
+                            id="adminLostImage"
+                            placeholder="Paste image URL"
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group admin-form-full">
+
+                        <label for="adminLostDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="adminLostDescription"
+                            rows="4"
+                            placeholder="Describe the item..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="admin-form-group admin-form-full">
+
+                        <label for="adminLostNotes">
+                            Additional Notes
+                        </label>
+
+                        <textarea
+                            id="adminLostNotes"
+                            rows="3"
+                            placeholder="Any additional information..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-modal-actions">
+
+                    <button
+                        type="button"
+                        class="admin-secondary-btn"
+                        id="adminLostCancelBtn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="admin-primary-btn"
+                    >
+                        Save Item
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         DETAILS MODAL
+    ========================================= -->
+
+    <div
+        class="admin-modal"
+        id="adminLostDetailsModal"
+    >
+
+        <div class="admin-modal-box admin-details-box">
+
+            <div class="admin-modal-header">
+
+                <div>
+
+                    <span class="admin-section-label">
+                        ITEM DETAILS
+                    </span>
+
+                    <h3>
+                        Lost & Found Item
+                    </h3>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="admin-modal-close"
+                    id="adminLostDetailsClose"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div id="adminLostDetailsContent">
+                Loading...
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <section
+    class="admin-section"
+    id="admin-claims"
+>
+
+    <div class="admin-page-header">
+
+        <div>
+            <span class="admin-section-label">
+                CLAIM CONTROL CENTER
+            </span>
+
+            <h2>
+                Claim Management
+            </h2>
+
+            <p>
+                Review, verify and manage Lost & Found claims submitted by students.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- CLAIM FILTERS -->
+
+    <div class="admin-claim-tabs">
+
+        <button
+            class="admin-claim-tab active"
+            data-claim-filter="all"
+        >
+            All
+        </button>
+
+        <button
+            class="admin-claim-tab"
+            data-claim-filter="pending"
+        >
+            Pending Verification
+        </button>
+
+        <button
+            class="admin-claim-tab"
+            data-claim-filter="approved"
+        >
+            Approved
+        </button>
+
+        <button
+            class="admin-claim-tab"
+            data-claim-filter="rejected"
+        >
+            Rejected
+        </button>
+
+        <button
+            class="admin-claim-tab"
+            data-claim-filter="more info needed"
+        >
+            More Info Needed
+        </button>
+
+        <button
+            class="admin-claim-tab"
+            data-claim-filter="returned"
+        >
+            Returned
+        </button>
+
+    </div>
+
+
+    <!-- CLAIM SUMMARY -->
+
+    <div class="admin-claims-summary">
+
+        <div>
+            <span>Total shown</span>
+            <strong id="adminClaimsCount">0</strong>
+        </div>
+
+        <div>
+            <span>Pending</span>
+            <strong id="adminPendingClaimCount">0</strong>
+        </div>
+
+        <div>
+            <span>Approved</span>
+            <strong id="adminApprovedClaimCount">0</strong>
+        </div>
+
+        <div>
+            <span>Returned</span>
+            <strong id="adminReturnedClaimCount">0</strong>
+        </div>
+
+    </div>
+
+
+    <!-- CLAIM LIST -->
+
+    <div
+        class="admin-claims-list"
+        id="adminClaimsList"
+    >
+
+        <div class="admin-loading">
+            Loading claims...
+        </div>
+
+    </div>
+
+</section>
+
+
+        <section class="admin-section" id="admin-users">
+
+    <div class="admin-page-header">
+
+        <div>
+            <span class="admin-section-label">USER ADMINISTRATION</span>
+
+            <h2>User Management</h2>
+
+            <p>
+                Manage students, teachers, and administrators registered on Naventra.
+            </p>
+        </div>
+
+        <button
+            type="button"
+            class="admin-primary-btn"
+            id="adminInviteUserBtn"
+        >
+            + Invite User
+        </button>
+        <!-- ========================================
+     INVITE USER MODAL
+======================================== -->
+
+<div
+    class="admin-modal"
+    id="adminInviteModal"
+>
+
+    <div class="admin-modal-box">
+
+        <div class="admin-modal-header">
+
+            <div>
+                <span class="admin-section-label">
+                    USER MANAGEMENT
+                </span>
+
+                <h2>Invite User</h2>
+
+                <p>
+                    Create an invitation for a Naventra user.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="admin-modal-close"
+                id="adminInviteClose"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="adminInviteForm">
+
+            <div class="admin-form-group">
+
+                <label for="inviteFullName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="inviteFullName"
+                    placeholder="Enter full name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="admin-form-group">
+
+                <label for="inviteEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="inviteEmail"
+                    placeholder="Enter email address"
+                    required
+                >
+
+            </div>
+
+
+            <div class="admin-form-group">
+
+                <label for="inviteRole">
+                    Role
+                </label>
+
+                <select
+                    id="inviteRole"
+                    required
+                >
+
+                    <option value="student">
+                        Student
+                    </option>
+
+                    <option value="teacher">
+                        Teacher
+                    </option>
+
+                    <option value="admin">
+                        Administrator
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="admin-modal-actions">
+
+                <button
+                    type="button"
+                    class="admin-secondary-btn"
+                    id="adminInviteCancel"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="admin-primary-btn"
+                >
+                    Send Invitation
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+    </div>
+
+
+    <!-- USER FILTERS -->
+
+    <div class="admin-user-toolbar">
+
+        <div class="admin-search-box">
+
+            <span>🔍</span>
+
+            <input
+                type="search"
+                id="adminUserSearch"
+                placeholder="Search by name or email..."
+            >
+
+        </div>
+
+
+        <select id="adminUserRole">
+
+            <option value="all">All Roles</option>
+            <option value="student">Students</option>
+            <option value="teacher">Teachers</option>
+            <option value="admin">Administrators</option>
+
+        </select>
+
+    </div>
+
+
+    <!-- USER COUNT -->
+
+    <div class="admin-user-summary">
+
+        <strong id="adminUsersCount">0</strong>
+
+        <span>registered users</span>
+
+    </div>
+
+
+    <!-- USER TABLE -->
+
+    <article class="admin-panel">
+
+        <div class="admin-users-table-wrap">
+
+            <table class="admin-users-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Portal</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="adminUsersTableBody">
+
+                    <tr>
+                        <td colspan="5" class="admin-table-loading">
+                            Loading users...
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </article>
+
+</section>
+
+      <section
+    class="admin-section"
+    id="admin-announcements"
+>
+
+    <div class="admin-page-header">
+
+        <div>
+            <span class="admin-section-label">
+                SCHOOL COMMUNICATION
+            </span>
+
+            <h2>
+                Announcements
+            </h2>
+
+            <p>
+                Create, publish and manage school announcements.
+            </p>
+        </div>
+
+        <button
+            type="button"
+            class="admin-primary-btn"
+            id="admin-create-announcement-button"
+        >
+            + Create Announcement
+        </button>
+
+    </div>
+
+
+    <!-- FILTERS -->
+
+    <div class="admin-announcement-toolbar">
+
+        <input
+            type="search"
+            id="adminAnnouncementSearch"
+            placeholder="Search announcements..."
+        >
+
+        <select id="adminAnnouncementFilter">
+
+            <option value="all">
+                All
+            </option>
+
+            <option value="published">
+                Published
+            </option>
+
+            <option value="draft">
+                Drafts
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- COUNT -->
+
+    <div class="admin-announcement-count">
+
+        <strong id="adminAnnouncementsCount">
+            0
+        </strong>
+
+        <span>
+            announcements
+        </span>
+
+    </div>
+
+
+    <!-- LIST -->
+
+    <div
+        class="admin-announcements-list"
+        id="adminAnnouncementsList"
+    >
+
+        <div class="admin-loading">
+            Loading announcements...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     ANNOUNCEMENT MODAL
+======================================== -->
+
+<div
+    class="admin-modal"
+    id="adminAnnouncementModal"
+>
+
+    <div class="admin-modal-content">
+
+        <div class="admin-modal-header">
+
+            <div>
+
+                <span class="admin-section-label">
+                    SCHOOL COMMUNICATION
+                </span>
+
+                <h2 id="adminAnnouncementModalTitle">
+                    Create Announcement
+                </h2>
+
+            </div>
+
+            <button
+    type="button"
+    class="close"
+    id="admin-create-announcement-button-close"
+>
+    ×
+</button>
+
+        </div>
+
+
+        <form id="adminAnnouncementForm">
+
+            <input
+                type="hidden"
+                id="adminAnnouncementId"
+            >
+
+
+            <label>
+                Title
+
+                <input
+                    type="text"
+                    id="adminAnnouncementTitle"
+                    required
+                    maxlength="150"
+                    placeholder="Enter announcement title"
+                >
+
+            </label>
+
+
+            <label>
+                Content
+
+                <textarea
+                    id="adminAnnouncementContent"
+                    required
+                    rows="6"
+                    placeholder="Write the announcement..."
+                ></textarea>
+
+            </label>
+
+
+            <div class="admin-form-grid">
+
+                <label>
+                    Category
+
+                    <select
+                        id="adminAnnouncementCategory"
+                    >
+
+                        <option value="General">
+                            General
+                        </option>
+
+                        <option value="Academic">
+                            Academic
+                        </option>
+
+                        <option value="Event">
+                            Event
+                        </option>
+
+                        <option value="Important">
+                            Important
+                        </option>
+
+                        <option value="School">
+                            School
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+                    Priority
+
+                    <select
+                        id="adminAnnouncementPriority"
+                    >
+
+                        <option value="normal">
+                            Normal
+                        </option>
+
+                        <option value="important">
+                            Important
+                        </option>
+
+                        <option value="urgent">
+                            Urgent
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+                    Target Audience
+
+                    <select
+                        id="adminAnnouncementAudience"
+                    >
+
+                        <option value="everyone">
+                            Everyone
+                        </option>
+
+                        <option value="students">
+                            Students
+                        </option>
+
+                        <option value="teachers">
+                            Teachers
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+                    Expiry Date
+
+                    <input
+                        type="datetime-local"
+                        id="adminAnnouncementExpires"
+                    >
+
+                </label>
+
+            </div>
+
+
+            <label class="admin-checkbox-label">
+
+                <input
+                    type="checkbox"
+                    id="adminAnnouncementPublished"
+                    checked
+                >
+
+                Publish announcement immediately
+
+            </label>
+
+
+            <label>
+                Attachment URL
+                <span class="admin-optional">
+                    Optional
+                </span>
+
+                <input
+                    type="url"
+                    id="adminAnnouncementAttachment"
+                    placeholder="https://..."
+                >
+
+            </label>
+
+
+            <div class="admin-modal-actions">
+
+                <button
+                    type="button"
+                    class="admin-secondary-btn"
+                    id="adminCancelAnnouncementBtn"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="admin-primary-btn"
+                >
+                    Save Announcement
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+    
+<!-- ========================================
+     ADMIN EVENTS
+======================================== -->
+
+<section class="admin-section" id="admin-events">
+
+    <div class="admin-page-header">
+
+        <div>
+            <span class="admin-section-label">
+                SCHOOL ACTIVITIES
+            </span>
+
+            <h2>
+                Events
+            </h2>
+
+            <p>
+                Create, manage and organize school events.
+            </p>
+        </div>
+
+        <button
+            type="button"
+            class="admin-primary-btn"
+            id="adminCreateEventBtn"
+        >
+            + Create Event
+        </button>
+
+    </div>
+
+
+    <!-- SEARCH + FILTER -->
+
+    <div class="admin-events-toolbar">
+
+        <input
+            type="search"
+            id="adminEventSearch"
+            placeholder="Search events..."
+        >
+
+        <select id="adminEventFilter">
+
+            <option value="all">
+                All Events
+            </option>
+
+            <option value="upcoming">
+                Upcoming
+            </option>
+
+            <option value="ongoing">
+                Ongoing
+            </option>
+
+            <option value="completed">
+                Completed
+            </option>
+
+            <option value="cancelled">
+                Cancelled
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- COUNT -->
+
+    <div class="admin-event-count">
+
+        <strong id="adminEventsCount">
+            0
+        </strong>
+
+        <span>
+            events
+        </span>
+
+    </div>
+
+
+    <!-- EVENT LIST -->
+
+    <div
+        class="admin-events-list"
+        id="adminEventsList"
+    >
+
+        <div class="admin-loading">
+            Loading events...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     CREATE / EDIT EVENT MODAL
+======================================== -->
+
+<div
+    class="admin-modal"
+    id="adminEventModal"
+>
+
+    <div class="admin-modal-content admin-event-modal">
+
+        <div class="admin-modal-header">
+
+            <div>
+
+                <span class="admin-section-label">
+                    SCHOOL ACTIVITIES
+                </span>
+
+                <h2 id="adminEventModalTitle">
+                    Create Event
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="admin-modal-close"
+                id="adminCloseEventModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="adminEventForm">
+
+            <input
+                type="hidden"
+                id="adminEventId"
+            >
+
+
+            <!-- TITLE -->
+
+            <label>
+                Event Title
+
+                <input
+                    type="text"
+                    id="adminEventTitle"
+                    required
+                    maxlength="150"
+                    placeholder="Enter event title"
+                >
+
+            </label>
+
+
+            <!-- DESCRIPTION -->
+
+            <label>
+                Description
+
+                <textarea
+                    id="adminEventDescription"
+                    required
+                    rows="5"
+                    placeholder="Describe the event..."
+                ></textarea>
+
+            </label>
+
+
+            <!-- CATEGORY -->
+
+            <div class="admin-form-grid">
+
+                <label>
+                    Category
+
+                    <select id="adminEventCategory" required>
+
+                        <option value="Academic">
+                            Academic
+                        </option>
+
+                        <option value="Sports">
+                            Sports
+                        </option>
+
+                        <option value="Cultural">
+                            Cultural
+                        </option>
+
+                        <option value="Competition">
+                            Competition
+                        </option>
+
+                        <option value="Workshop">
+                            Workshop
+                        </option>
+
+                        <option value="School">
+                            School
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <!-- DATE -->
+
+                <label>
+                    Event Date
+
+                    <input
+                        type="date"
+                        id="adminEventDate"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- START TIME -->
+
+                <label>
+                    Start Time
+
+                    <input
+                        type="time"
+                        id="adminEventStartTime"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- END TIME -->
+
+                <label>
+                    End Time
+
+                    <input
+                        type="time"
+                        id="adminEventEndTime"
+                >
+
+                </label>
+
+            </div>
+
+
+            <!-- LOCATION -->
+
+            <label>
+                Location
+
+                <input
+                    type="text"
+                    id="adminEventLocation"
+                    required
+                    placeholder="e.g. School Auditorium"
+                >
+
+            </label>
+
+
+            <!-- IMAGE -->
+
+            <label>
+                Image URL
+
+                <span class="admin-optional">
+                    Optional
+                </span>
+
+                <input
+                    type="url"
+                    id="adminEventImage"
+                    placeholder="https://..."
+                >
+
+            </label>
+
+
+            <!-- REGISTRATION -->
+
+            <label class="admin-checkbox-label">
+
+                <input
+                    type="checkbox"
+                    id="adminEventRegistration"
+                >
+
+                Registration required
+
+            </label>
+
+
+            <div
+                class="admin-form-grid"
+                id="adminEventRegistrationFields"
+            >
+
+                <label>
+                    Registration Deadline
+
+                    <input
+                        type="datetime-local"
+                        id="adminEventRegistrationDeadline"
+                    >
+
+                </label>
+
+
+                <label>
+                    Maximum Participants
+
+                    <input
+                        type="number"
+                        id="adminEventMaxParticipants"
+                        min="1"
+                        placeholder="Optional"
+                    >
+
+                </label>
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <label>
+                Event Status
+
+                <select id="adminEventStatus">
+
+                    <option value="upcoming">
+                        Upcoming
+                    </option>
+
+                    <option value="ongoing">
+                        Ongoing
+                    </option>
+
+                    <option value="completed">
+                        Completed
+                    </option>
+
+                    <option value="cancelled">
+                        Cancelled
+                    </option>
+
+                </select>
+
+            </label>
+
+
+            <!-- ACTIONS -->
+
+            <div class="admin-modal-actions">
+
+                <button
+                    type="button"
+                    class="admin-secondary-btn"
+                    id="adminCancelEventBtn"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="admin-primary-btn"
+                    id="adminSaveEventBtn"
+                >
+                    Save Event
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+        
+<!-- ========================================
+     ADMIN CAREER ANALYTICS
+======================================== -->
+
+<section
+    class="admin-section"
+    id="admin-career-analytics"
+>
+
+    <div class="admin-page-header">
+
+        <div>
+
+            <span class="admin-section-label">
+                STUDENT DEVELOPMENT
+            </span>
+
+            <h2>
+                Career Analytics
+            </h2>
+
+            <p>
+                View career assessment trends and student interest patterns.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         ANALYTICS CARDS
+    ======================================== -->
+
+    <div class="career-analytics-cards">
+
+        <div class="career-analytics-card">
+
+            <span>
+                Total Results
+            </span>
+
+            <strong id="careerAnalyticsTotal">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="career-analytics-card">
+
+            <span>
+                Students Assessed
+            </span>
+
+            <strong id="careerAnalyticsStudents">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="career-analytics-card">
+
+            <span>
+                Average Maths Score
+            </span>
+
+            <strong id="careerAnalyticsAverage">
+                0%
+            </strong>
+
+        </div>
+
+
+        <div class="career-analytics-card">
+
+            <span>
+                Top Career
+            </span>
+
+            <strong
+                id="careerAnalyticsTopCareer"
+            >
+                —
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         FILTER
+    ======================================== -->
+
+    <div class="career-analytics-toolbar">
+
+        <input
+            type="search"
+            id="careerAnalyticsSearch"
+            placeholder="Search career..."
+        >
+
+    </div>
+
+
+    <!-- ========================================
+         CAREER DISTRIBUTION
+    ======================================== -->
+
+    <div class="career-analytics-panel">
+
+        <div class="career-analytics-panel-header">
+
+            <div>
+
+                <span class="admin-section-label">
+                    CAREER INTEREST
+                </span>
+
+                <h3>
+                    Career Distribution
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="career-analytics-chart-wrapper">
+
+            <canvas
+                id="careerDistributionChart"
+            ></canvas>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         MATHS PERFORMANCE
+    ======================================== -->
+
+    <div class="career-analytics-panel">
+
+        <div class="career-analytics-panel-header">
+
+            <div>
+
+                <span class="admin-section-label">
+                    ACADEMIC TREND
+                </span>
+
+                <h3>
+                    Maths Performance
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="career-analytics-chart-wrapper">
+
+            <canvas
+                id="careerMathsChart"
+            ></canvas>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         CAREER TABLE
+    ======================================== -->
+
+    <div class="career-analytics-panel">
+
+        <div class="career-analytics-panel-header">
+
+            <div>
+
+                <span class="admin-section-label">
+                    RESULTS
+                </span>
+
+                <h3>
+                    Career Results
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="career-analytics-table-wrapper"
+        >
+
+            <table
+                class="career-analytics-table"
+            >
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Career
+                        </th>
+
+                        <th>
+                            Maths
+                        </th>
+
+                        <th>
+                            Rank
+                        </th>
+
+                        <th>
+                            Strengths
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody
+                    id="careerAnalyticsTableBody"
+                >
+
+                    <tr>
+
+                        <td colspan="5">
+                            Loading career results...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+        <!-- ========================================
+     ADMIN REPORTS
+======================================== -->
+
+<section class="admin-section" id="admin-reports">
+
+    <div class="admin-page-header">
+
+        <div>
+            <span class="admin-section-label">
+                SCHOOL OVERVIEW
+            </span>
+
+            <h2>Reports</h2>
+
+            <p>
+                View a summary of activity across Naventra.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         OVERVIEW CARDS
+    ======================================== -->
+
+    <div class="reports-cards">
+
+        <div class="reports-card">
+            <span>Total Students</span>
+            <strong id="reportStudents">0</strong>
+        </div>
+
+        <div class="reports-card">
+            <span>Total Events</span>
+            <strong id="reportEvents">0</strong>
+        </div>
+
+        <div class="reports-card">
+            <span>Announcements</span>
+            <strong id="reportAnnouncements">0</strong>
+        </div>
+
+        <div class="reports-card">
+            <span>Lost & Found</span>
+            <strong id="reportLostFound">0</strong>
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         EVENTS REPORT
+    ======================================== -->
+
+    <div class="reports-panel">
+
+        <div class="reports-panel-header">
+
+            <div>
+                <span class="admin-section-label">
+                    SCHOOL ACTIVITIES
+                </span>
+
+                <h3>Events Report</h3>
+            </div>
+
+        </div>
+
+        <div class="reports-stats">
+
+            <div>
+                <span>Upcoming</span>
+                <strong id="reportUpcomingEvents">0</strong>
+            </div>
+
+            <div>
+                <span>Ongoing</span>
+                <strong id="reportOngoingEvents">0</strong>
+            </div>
+
+            <div>
+                <span>Completed</span>
+                <strong id="reportCompletedEvents">0</strong>
+            </div>
+
+            <div>
+                <span>Cancelled</span>
+                <strong id="reportCancelledEvents">0</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         ANNOUNCEMENTS REPORT
+    ======================================== -->
+
+    <div class="reports-panel">
+
+        <div class="reports-panel-header">
+
+            <div>
+                <span class="admin-section-label">
+                    COMMUNICATION
+                </span>
+
+                <h3>Announcements Report</h3>
+            </div>
+
+        </div>
+
+        <div class="reports-stats">
+
+            <div>
+                <span>Published</span>
+                <strong id="reportPublishedAnnouncements">
+                    0
+                </strong>
+            </div>
+
+            <div>
+                <span>Drafts</span>
+                <strong id="reportDraftAnnouncements">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         LOST & FOUND REPORT
+    ======================================== -->
+
+    <div class="reports-panel">
+
+        <div class="reports-panel-header">
+
+            <div>
+                <span class="admin-section-label">
+                    STUDENT SERVICES
+                </span>
+
+                <h3>Lost & Found Report</h3>
+            </div>
+
+        </div>
+
+        <div class="reports-stats">
+
+            <div>
+                <span>Total Items</span>
+                <strong id="reportLostFoundTotal">
+                    0
+                </strong>
+            </div>
+
+            <div>
+                <span>Claimed</span>
+                <strong id="reportClaimedItems">
+                    0
+                </strong>
+            </div>
+
+            <div>
+                <span>Unclaimed</span>
+                <strong id="reportUnclaimedItems">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         REPORT STATUS
+    ======================================== -->
+
+    <div
+        id="reportsStatus"
+        class="reports-status"
+    >
+        Loading reports...
+    </div>
+
+</section>
+        
+        
+<!-- ========================================
+     ADMIN PROFILE
+======================================== -->
+
+<section
+    class="admin-section"
+    id="admin-profile"
+>
+
+    <div class="admin-page-header">
+
+        <div>
+
+            <span class="admin-section-label">
+                ACCOUNT SETTINGS
+            </span>
+
+            <h2>
+                Administrator Profile
+            </h2>
+
+            <p>
+                View and manage your administrator account information.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         PROFILE HEADER
+    ======================================== -->
+
+    <div class="admin-profile-card">
+
+        <div class="admin-profile-avatar">
+            👤
+        </div>
+
+        <div class="admin-profile-main">
+
+            <h3 id="adminProfileName">
+                Administrator
+            </h3>
+
+            <p id="adminProfileEmail">
+                Loading email...
+            </p>
+
+            <span class="admin-profile-role">
+                Administrator
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         ACCOUNT INFORMATION
+    ======================================== -->
+
+    <div class="admin-profile-panel">
+
+        <div class="admin-profile-panel-header">
+
+            <div>
+
+                <span class="admin-section-label">
+                    ACCOUNT
+                </span>
+
+                <h3>
+                    Account Information
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-profile-info-grid">
+
+            <div class="admin-profile-info">
+
+                <span>
+                    Full Name
+                </span>
+
+                <strong id="adminProfileFullName">
+                    Administrator
+                </strong>
+
+            </div>
+
+
+            <div class="admin-profile-info">
+
+                <span>
+                    Email Address
+                </span>
+
+                <strong id="adminProfileEmailInfo">
+                    Loading...
+                </strong>
+
+            </div>
+
+
+            <div class="admin-profile-info">
+
+                <span>
+                    Account Role
+                </span>
+
+                <strong>
+                    Administrator
+                </strong>
+
+            </div>
+
+
+            <div class="admin-profile-info">
+
+                <span>
+                    Account Status
+                </span>
+
+                <strong class="admin-profile-status">
+                    Active
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         SECURITY
+    ======================================== -->
+
+    <div class="admin-profile-panel">
+
+        <div class="admin-profile-panel-header">
+
+            <div>
+
+                <span class="admin-section-label">
+                    SECURITY
+                </span>
+
+                <h3>
+                    Account Security
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-profile-security">
+
+            <div>
+
+                <strong>
+                    Password
+                </strong>
+
+                <p>
+                    Your account password is securely managed through Naventra authentication.
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                class="admin-secondary-btn"
+                id="adminProfileLogoutBtn"
+            >
+                Log Out
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+    const SUPABASE_URL = "https://bepjrkmjvocotcxfgmlj.supabase.co/";
+    const SUPABASE_ANON_KEY = "sb_publishable_zYMFeoiJsB5ukZycl2H6sg_4a85UDW2";
+
+    const supabaseClient = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+    );
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="admin-dashboard.js"></script>
+
+
+</body>
+
+</html>

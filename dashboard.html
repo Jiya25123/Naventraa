@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naventra | Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="portal-page">
+
+    <!-- TOP BAR -->
+    <header class="portal-header">
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+            ☰
+        </button>
+
+        <h1 id="pageTitle">Dashboard</h1>
+
+        <div class="header-actions">
+
+    <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">
+        🌙
+    </button>
+
+    <button class="icon-btn notification-btn" id="notificationBtn" aria-label="Notifications">
+        🔔
+        <span id="notificationBadge" class="notification-badge">0</span>
+    </button>
+
+    <button class="profile-top-btn" id="profileTopBtn" aria-label="Open profile">
+        <span id="topProfileInitials">NT</span>
+    </button>
+
+</div>
+
+    </header>
+
+
+    <!-- SIDE MENU -->
+    <aside class="portal-sidebar" id="portalSidebar">
+
+    <div class="sidebar-brand">
+        <div class="logo-icon">N</div>
+        <strong>NAVENTRA</strong>
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <button class="sidebar-link active" data-page="dashboard">
+            🏠 Dashboard
+        </button>
+
+        <button class="sidebar-link" data-page="lost-found">
+            🔍 Lost &amp; Found
+        </button>
+
+        <button class="sidebar-link" data-page="assessment">
+            🧭 Career Assessment
+        </button>
+
+        <button class="sidebar-link" data-page="resources">
+            📚 Resources
+        </button>
+
+        <button class="sidebar-link" data-page="explorer">
+            🔎 Career Explorer
+        </button>
+
+        <button class="sidebar-link" data-page="saved-careers">
+            ❤️ Saved Careers
+        </button>
+
+        <button class="sidebar-link" data-page="events">
+            📅 School Events
+        </button>
+
+        <button class="sidebar-link" data-page="announcements">
+            📢 Announcements
+        </button>
+
+        <button class="sidebar-link" data-page="notifications">
+            🔔 Notifications
+        </button>
+
+        <button class="sidebar-link" data-page="achievements">
+            🏆 Achievement Vault
+        </button>
+
+        <button class="sidebar-link" data-page="help">
+            🆘 Help &amp; Support
+        </button>
+
+        <button class="sidebar-link" data-page="profile">
+            👤 Profile
+        </button>
+
+    </nav>
+
+
+    <!-- SIDEBAR USER PROFILE -->
+
+    <div class="sidebar-profile">
+
+        <div class="sidebar-profile-info">
+
+            <div
+                class="profile-avatar"
+                id="profileAvatar"
+            >
+                <span id="sidebarProfileInitials">
+                    S
+                </span>
+            </div>
+
+            <div class="profile-info">
+
+                <strong id="sidebarStudentName">
+                    Loading...
+                </strong>
+
+                <small id="sidebarStudentEmail">
+                    Loading...
+                </small>
+
+            </div>
+
+        </div>
+
+        <button
+            id="logoutBtn"
+            class="sidebar-logout"
+            type="button"
+            aria-label="Log out"
+        >
+            ↪
+        </button>
+
+    </div>
+
+</aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="portal-main">
+
+        <!-- DASHBOARD PAGE -->
+        <section id="dashboardPage" class="portal-section active">
+
+            <!-- WELCOME -->
+            <section class="welcome-card">
+
+                <div>
+                    <span class="welcome-label">Student Portal</span>
+
+                    <h2>
+                        Welcome back,
+                        <span id="studentName">Student</span> 👋
+                    </h2>
+
+                    <p>
+                        Here's what's happening across your school today.
+                    </p>
+
+                    <button class="primary-btn" id="browseLostFoundBtn">
+                        Browse Lost & Found
+                    </button>
+                </div>
+
+                <div class="welcome-icon">
+                    🧭
+                </div>
+
+            </section>
+
+
+            <!-- CAREER GUIDANCE -->
+            <section class="career-guidance-card">
+
+                <div class="career-icon">
+                    🧭
+                </div>
+
+                <div>
+                    <span>CAREER GUIDANCE</span>
+
+                    <h3>
+                        Discover where your interests can take you.
+                    </h3>
+
+                    <p>
+                        Take the Career Assessment and explore career paths
+                        based on your interests, skills and preferences.
+                    </p>
+
+                    <button class="secondary-btn" id="careerAssessmentBtn">
+                        Explore Career Guidance →
+                    </button>
+                </div>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+            <section class="dashboard-stats">
+
+                <div class="stat-card">
+                    <div class="stat-icon">❤️</div>
+                    <div>
+                        <span>Saved Careers</span>
+                        <strong id="savedCareersCount">0</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card clickable-stat" id="activeClaimsCard">
+    <div class="stat-icon">👜</div>
+    <div>
+        <span>Active Claims</span>
+        <strong id="activeClaimsCount">0</strong>
+    </div>
+</div>
+                <div class="stat-card">
+                    <div class="stat-icon">📢</div>
+                    <div>
+                        <span>Announcements</span>
+                        <strong id="announcementsCount">0</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div>
+                        <span>Upcoming Events</span>
+                        <strong id="upcomingEventsCount">0</strong>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- RECENT LOST & FOUND -->
+            <section class="dashboard-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <span class="section-label">LOST & FOUND</span>
+                        <h2>Recent Verified Items</h2>
+                    </div>
+
+                    <button class="text-btn" id="viewLostFoundBtn">
+                        View Lost & Found →
+                    </button>
+
+                </div>
+
+                <div id="recentLostItems" class="item-grid">
+
+                    <div class="empty-state">
+                        Loading verified items...
+                    </div>
+
+                </div>
+
+            </section>
+
+            </section>
+
+            <!-- SAVED CAREERS -->
+            <section class="dashboard-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <span class="section-label">YOUR CAREER PICKS</span>
+                        <h2>Saved Careers</h2>
+                    </div>
+
+                    <button class="text-btn" id="viewSavedCareersBtn">
+                        View All →
+                    </button>
+
+                </div>
+
+                <div id="dashboardSavedCareers" class="saved-careers-grid">
+
+                    <div class="empty-state">
+                        No saved careers yet.
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+        </section>
+
+
+
+        <!-- OTHER PORTAL PAGES WILL BE ADDED HERE -->
+        <section id="lostFoundPage" class="portal-section">
+
+    <div class="portal-page-header">
+        <span class="section-label">LOST & FOUND</span>
+        <h2>Find what you've lost.</h2>
+        <p>
+            Search school-listed items and submit a claim if you believe an item is yours.
+        </p>
+    </div>
+
+    <div class="lost-found-search">
+
+        <input
+            type="text"
+            id="lostFoundSearch"
+            placeholder="Search by item name..."
+        >
+
+        <select id="lostFoundCategory">
+            <option value="">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="stationery">Stationery</option>
+            <option value="clothing">Clothing</option>
+            <option value="accessories">Accessories</option>
+            <option value="bottles">Bottles</option>
+            <option value="other">Other</option>
+        </select>
+
+        <select id="lostFoundLocation">
+            <option value="">All Locations</option>
+            <option value="cafeteria">Cafeteria</option>
+            <option value="classroom">Classroom</option>
+            <option value="library">Library</option>
+            <option value="playground">Playground</option>
+            <option value="bus">School Bus</option>
+            <option value="other">Other</option>
+        </select>
+
+        <select id="lostFoundStatus">
+            <option value="">All Statuses</option>
+            <option value="found">Found</option>
+            <option value="claim-pending">Claim Pending</option>
+            <option value="verified">Verified</option>
+            <option value="returned">Returned</option>
+        </select>
+
+    </div>
+
+    <div id="lostFoundItems" class="item-grid">
+    <div class="empty-state">
+        Loading verified items...
+    </div>
+</div>
+
+
+<!-- MY CLAIMS -->
+<section class="my-claims-section">
+
+    <div class="section-header">
+
+        <div>
+            <span class="section-label">MY CLAIMS</span>
+            <h2>Your Lost & Found Claims</h2>
+        </div>
+
+    </div>
+
+    <div id="myClaimsList" class="my-claims-list">
+
+        <div class="empty-state">
+            Loading your claims...
+        </div>
+
+    </div>
+
+</section>
+
+</section>
+</section>
+        <section id="assessmentPage" class="portal-section">
+
+    <!-- ASSESSMENT INTRO -->
+    <div id="assessmentIntro" class="assessment-screen">
+
+        <div class="assessment-hero">
+
+            <div class="assessment-hero-content">
+
+                <span class="section-label">
+                    CAREER ASSESSMENT
+                </span>
+
+                <h2>
+                    Discover where your interests can take you.
+                </h2>
+
+                <p>
+                    Answer a few thoughtful questions about your
+                    interests, strengths and preferences. We'll help
+                    you discover career paths that could be a great
+                    fit for you.
+                </p>
+
+                <div class="assessment-info">
+
+                    <div class="assessment-info-item">
+                        <strong>16</strong>
+                        <span>Questions</span>
+                    </div>
+
+                    <div class="assessment-info-item">
+                        <strong>5–7</strong>
+                        <span>Minutes</span>
+                    </div>
+
+                    <div class="assessment-info-item">
+                        <strong>Personalized</strong>
+                        <span>Results</span>
+                    </div>
+
+                </div>
+
+             <button
+    class="primary-btn"
+    id="startAssessmentBtn"
+    type="button"
+>
+    Start Career Assessment →
+</button>
+
+<button
+    class="secondary-btn"
+    id="viewPastAssessmentBtn"
+    type="button"
+    style="display: none;"
+>
+    View Past Test Result
+</button>
+
+            </div>
+
+            <div class="assessment-hero-icon">
+                🧭
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUESTIONS -->
+    <div
+        id="assessmentQuestions"
+        class="assessment-screen"
+        style="display: none;"
+    >
+
+        <div class="assessment-question-card">
+
+            <div class="assessment-progress">
+
+                <div class="assessment-progress-top">
+                    <span id="assessmentQuestionNumber">
+                        Question 1 of 12
+                    </span>
+
+                    <span id="assessmentProgressPercent">
+                        8%
+                    </span>
+                </div>
+
+                <div class="assessment-progress-bar">
+                    <div
+                        id="assessmentProgressFill"
+                        class="assessment-progress-fill"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <div class="assessment-question-content">
+
+                <span class="section-label">
+                    YOUR INTERESTS
+                </span>
+
+                <h2 id="assessmentQuestion">
+                    What kind of activity do you enjoy most?
+                </h2>
+
+                <div
+                    id="assessmentOptions"
+                    class="assessment-options"
+                ></div>
+
+            </div>
+
+
+            <div class="assessment-navigation">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="assessmentBackBtn"
+                >
+                    ← Back
+                </button>
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="assessmentNextBtn"
+                >
+                    Next →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RESULTS -->
+    <div
+        id="assessmentResults"
+        class="assessment-screen"
+        style="display: none;"
+    >
+
+        <div class="assessment-results-card">
+
+            <span class="section-label">
+                ASSESSMENT COMPLETE
+            </span>
+
+            <h2>
+                Your Career Matches
+            </h2>
+
+            <p>
+                Based on your answers, we've identified career
+                paths that may match your interests and strengths.
+            </p>
+
+            <div
+                id="careerResultsList"
+                class="career-results-list"
+            ></div>
+
+            <button
+                type="button"
+                class="secondary-btn"
+                id="retakeAssessmentBtn"
+            >
+                ↻ Retake Assessment
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+        <section id="explorerPage" class="portal-section">
+
+    <div class="portal-page-header">
+        <span class="section-label">CAREER EXPLORER</span>
+
+        <h2>Explore careers that inspire you. 🧭</h2>
+
+        <p>
+            Discover different career paths, learn what they involve,
+            and find possibilities that match your interests and strengths.
+        </p>
+    </div>
+
+
+    <!-- SEARCH & FILTERS -->
+
+    <div class="career-explorer-controls">
+
+        <div class="career-search-box">
+            <span>🔎</span>
+
+            <input
+                type="text"
+                id="careerExplorerSearch"
+                placeholder="Search careers..."
+            >
+        </div>
+
+        <select id="careerExplorerCategory">
+            <option value="">All Fields</option>
+            <option value="Technology">Technology</option>
+            <option value="Medicine">Medicine</option>
+            <option value="Science">Science</option>
+            <option value="Business">Business</option>
+            <option value="Creative">Creative</option>
+            <option value="Law">Law</option>
+            <option value="Education">Education</option>
+            <option value="Engineering">Engineering</option>
+        </select>
+
+    </div>
+
+
+    <!-- FEATURED CAREER -->
+
+    <section class="featured-career-section">
+
+        <div class="section-header">
+
+            <div>
+                <span class="section-label">FEATURED</span>
+                <h2>Career Spotlight</h2>
+            </div>
+
+        </div>
+
+        <div id="featuredCareerCard" class="featured-career-card">
+            <!-- JavaScript will load featured career -->
+        </div>
+
+    </section>
+
+
+    <!-- ALL CAREERS -->
+
+    <section class="dashboard-section">
+
+        <div class="section-header">
+
+            <div>
+                <span class="section-label">EXPLORE</span>
+                <h2>Career Paths</h2>
+            </div>
+
+            <span id="careerExplorerCount" class="career-result-count">
+                0 careers
+            </span>
+
+        </div>
+
+
+        <div
+            id="careerExplorerGrid"
+            class="career-explorer-grid"
+        >
+
+            <div class="empty-state">
+                Loading careers...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CAREER DETAILS MODAL -->
+
+    <div
+        class="career-details-modal"
+        id="careerDetailsModal"
+    >
+
+        <div class="career-details-content">
+
+            <button
+                type="button"
+                class="career-details-close"
+                id="careerDetailsClose"
+            >
+                ×
+            </button>
+
+            <div id="careerDetailsBody">
+                <!-- Career details loaded here -->
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================
+     SAVED CAREERS
+======================================== -->
+
+<section
+    id="savedCareersPage"
+    class="portal-section"
+>
+
+    <div class="portal-page-header">
+
+        <span class="section-label">
+            YOUR CAREER COLLECTION
+        </span>
+
+        <h2>
+            Saved Careers 💜
+        </h2>
+
+        <p>
+            Keep track of careers that interest you
+            and explore them whenever you're ready.
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH & FILTER -->
+
+    <section class="saved-careers-controls">
+
+        <div class="saved-careers-search-wrapper">
+
+            <span>🔍</span>
+
+            <input
+                type="search"
+                id="savedCareerSearch"
+                placeholder="Search saved careers..."
+            >
+
+        </div>
+
+
+        <select
+            id="savedCareerCategoryFilter"
+        >
+
+            <option value="all">
+                All Categories
+            </option>
+
+        </select>
+
+    </section>
+
+
+    <!-- SAVED CAREER LIST -->
+
+    <section class="dashboard-section">
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="section-label">
+                    YOUR SAVES
+                </span>
+
+                <h2>
+                    Careers You're Exploring
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="savedCareerList"
+            class="saved-careers-grid"
+        >
+
+            <div class="empty-state">
+                Loading saved careers...
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+<!-- ========================================
+     SCHOOL EVENTS
+     ======================================== -->
+
+<section
+    id="eventsPage"
+    class="portal-section"
+>
+
+    <!-- PAGE HEADER -->
+
+    <div class="portal-page-header">
+
+        <span class="section-label">
+            SCHOOL LIFE
+        </span>
+
+        <h2>
+            School Events 📅
+        </h2>
+
+        <p>
+            Discover upcoming school events, competitions,
+            workshops and activities happening around you.
+        </p>
+
+    </div>
+
+
+    <!-- EVENT FILTERS -->
+
+    <div class="events-toolbar">
+
+        <div class="events-search">
+
+            <span>🔎</span>
+
+            <input
+                type="text"
+                id="eventSearchInput"
+                placeholder="Search events..."
+            >
+
+        </div>
+
+
+        <select
+            id="eventCategoryFilter"
+            class="events-filter"
+        >
+
+            <option value="all">
+                All Categories
+            </option>
+
+            <option value="competition">
+                Competitions
+            </option>
+
+            <option value="workshop">
+                Workshops
+            </option>
+
+            <option value="academic">
+                Academic
+            </option>
+
+            <option value="cultural">
+                Cultural
+            </option>
+
+            <option value="sports">
+                Sports
+            </option>
+
+            <option value="other">
+                Other
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- UPCOMING EVENTS -->
+
+    <section class="events-section">
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="section-label">
+                    COMING UP
+                </span>
+
+                <h2>
+                    Upcoming Events
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="eventList"
+            class="event-grid"
+        >
+
+            <div class="empty-state">
+                Loading school events...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EMPTY / ERROR STATE -->
+
+    <div
+        id="eventsEmptyState"
+        class="events-empty-state"
+        style="display: none;"
+    >
+
+        <div class="events-empty-icon">
+            📅
+        </div>
+
+        <h3>
+            No events found
+        </h3>
+
+        <p>
+            There are no events matching your search.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ========================================
+     ANNOUNCEMENTS
+======================================== -->
+
+<section
+    id="announcementsPage"
+    class="portal-section"
+>
+
+    <div class="portal-page-header">
+
+        <span class="section-label">
+            STAY UPDATED
+        </span>
+
+        <h2>
+            Announcements 📢
+        </h2>
+
+        <p>
+            Stay up to date with the latest school
+            news, notices and important updates.
+        </p>
+
+    </div>
+
+
+    <!-- ANNOUNCEMENT CONTROLS -->
+
+    <section class="announcement-controls">
+
+        <div class="announcement-search-wrapper">
+
+            <span>🔍</span>
+
+            <input
+                type="search"
+                id="announcementSearch"
+                placeholder="Search announcements..."
+            >
+
+        </div>
+
+
+        <select
+            id="announcementCategoryFilter"
+        >
+
+            <option value="all">
+                All Categories
+            </option>
+
+            <option value="General">
+                General
+            </option>
+
+            <option value="Academic">
+                Academic
+            </option>
+
+            <option value="Event">
+                Events
+            </option>
+
+            <option value="Important">
+                Important
+            </option>
+
+        </select>
+
+    </section>
+
+
+    <!-- ANNOUNCEMENT LIST -->
+
+    <section class="dashboard-section">
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="section-label">
+                    LATEST UPDATES
+                </span>
+
+                <h2>
+                    School News
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="announcementList"
+            class="announcement-grid"
+        >
+
+            <div class="empty-state">
+                Loading announcements...
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+<!-- ====================================
+     RESOURCES
+==================================== -->
+
+<section id="resourcesPage" class="portal-section">
+
+    <div class="portal-page-header">
+
+        <span class="section-label">
+            LEARNING HUB
+        </span>
+
+        <h2>
+            Resources 📚
+        </h2>
+
+        <p>
+            Explore helpful learning materials
+            shared by your school.
+        </p>
+
+    </div>
+
+
+    <!-- Search + Filter -->
+
+    <div class="student-resources-toolbar">
+
+        <input
+            type="search"
+            id="studentResourceSearch"
+            placeholder="Search resources..."
+        >
+
+        <select id="studentResourceCategory">
+
+            <option value="all">
+                All Categories
+            </option>
+
+            <option value="Study Skills">
+                Study Skills
+            </option>
+
+            <option value="Mathematics">
+                Mathematics
+            </option>
+
+            <option value="Science">
+                Science
+            </option>
+
+            <option value="English">
+                English
+            </option>
+
+            <option value="Career">
+                Career
+            </option>
+
+            <option value="Technology">
+                Technology
+            </option>
+
+            <option value="Other">
+                Other
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- Resource Count -->
+
+    <div class="student-resources-heading">
+
+        <div>
+
+            <h3>
+                Available Resources
+            </h3>
+
+            <p id="studentResourceCount">
+                Loading resources...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Resource Cards -->
+
+    <div
+        id="studentResourcesList"
+        class="student-resources-grid"
+    >
+
+        <div class="student-resource-loading">
+            📚 Loading resources...
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section id="notificationsPage" class="portal-section">
+
+    <div class="portal-page-header">
+
+        <span class="section-label">
+            STAY UPDATED
+        </span>
+
+        <h2>
+            Notifications 🔔
+        </h2>
+
+        <p>
+            Stay informed about announcements, events,
+            achievements and important school updates.
+        </p>
+
+    </div>
+
+
+    <!-- NOTIFICATION ACTIONS -->
+
+    <div class="notifications-toolbar">
+
+        <div class="notification-filter-buttons">
+
+            <button
+                type="button"
+                class="notification-filter active"
+                data-filter="all"
+            >
+                All
+            </button>
+
+            <button
+                type="button"
+                class="notification-filter"
+                data-filter="unread"
+            >
+                Unread
+            </button>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="text-btn"
+            id="markAllNotificationsReadBtn"
+        >
+            ✓ Mark all as read
+        </button>
+
+    </div>
+
+
+    <!-- NOTIFICATION LIST -->
+
+    <section class="dashboard-section">
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="section-label">
+                    YOUR UPDATES
+                </span>
+
+                <h2>
+                    Recent Notifications
+                </h2>
+
+            </div>
+
+            <span
+                id="unreadNotificationCount"
+                class="notification-count-label"
+            >
+                0 unread
+            </span>
+
+        </div>
+
+
+        <div
+            id="notificationList"
+            class="notification-list"
+        >
+
+            <div class="empty-state">
+                Loading notifications...
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+<!-- ACHIEVEMENT VAULT -->
+
+<section id="achievementsPage" class="portal-section">
+
+    <div class="portal-page-header">
+
+        <span class="section-label">
+            YOUR ACHIEVEMENTS
+        </span>
+
+        <h2>
+            Achievement Vault 🏆
+        </h2>
+
+        <p>
+            Keep track of your awards, certificates, badges,
+            medals and other accomplishments.
+        </p>
+
+    </div>
+
+
+    <!-- ACHIEVEMENT SUMMARY -->
+
+    <section class="achievement-summary-grid">
+
+        <div class="achievement-summary-card">
+
+            <div class="achievement-summary-icon">
+                🏆
+            </div>
+
+            <div>
+                <strong id="totalAchievements">0</strong>
+                <span>Total Achievements</span>
+            </div>
+
+        </div>
+
+
+        <div class="achievement-summary-card">
+
+            <div class="achievement-summary-icon">
+                🥇
+            </div>
+
+            <div>
+                <strong id="awardCount">0</strong>
+                <span>Awards</span>
+            </div>
+
+        </div>
+
+
+        <div class="achievement-summary-card">
+
+            <div class="achievement-summary-icon">
+                📜
+            </div>
+
+            <div>
+                <strong id="certificateCount">0</strong>
+                <span>Certificates</span>
+            </div>
+
+        </div>
+
+
+        <div class="achievement-summary-card">
+
+            <div class="achievement-summary-icon">
+                🎖️
+            </div>
+
+            <div>
+                <strong id="badgeCount">0</strong>
+                <span>Badges & Medals</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACHIEVEMENT LIST -->
+
+    <section class="dashboard-section">
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="section-label">
+                    YOUR VAULT
+                </span>
+
+                <h2>
+                    My Achievements
+                </h2>
+
+            </div>
+
+            <button
+                class="primary-btn"
+                id="addAchievementBtn"
+                type="button"
+            >
+                + Add Achievement
+            </button>
+
+        </div>
+
+
+        <div
+            id="achievementList"
+            class="achievement-grid"
+        >
+
+            <div class="empty-state">
+                Loading your achievements...
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+
+<section id="helpPage" class="portal-section"><div class="portal-page-header">
+    <span class="section-label">HELP & SUPPORT</span>
+
+    <h2>How can we help you? 💜</h2>
+
+    <p>
+        Find quick answers, learn how to use Naventra,
+        or contact your school for support.
+    </p>
+</div>
+
+
+<!-- HELP CARDS -->
+
+<div class="help-card-grid">
+
+    <!-- GETTING STARTED -->
+
+    <article class="help-card">
+
+        <div class="help-card-icon">🚀</div>
+
+        <div class="help-card-content">
+
+            <span class="section-label">GETTING STARTED</span>
+
+            <h3>New to Naventra?</h3>
+
+            <p>
+                Learn how to use the Student Portal
+                and explore Naventra's features.
+            </p>
+
+            <button
+                type="button"
+                class="secondary-btn help-action-btn"
+                data-help="getting-started"
+            >
+                Learn More →
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <!-- CAREER GUIDANCE -->
+
+    <article class="help-card">
+
+        <div class="help-card-icon">🧭</div>
+
+        <div class="help-card-content">
+
+            <span class="section-label">CAREER GUIDANCE</span>
+
+            <h3>Need help choosing a career?</h3>
+
+            <p>
+                Get help with your assessment,
+                career matches and saved careers.
+            </p>
+
+            <button
+                type="button"
+                class="secondary-btn help-action-btn"
+                data-help="career"
+            >
+                Get Help →
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <!-- LOST & FOUND -->
+
+    <article class="help-card">
+
+        <div class="help-card-icon">🔍</div>
+
+        <div class="help-card-content">
+
+            <span class="section-label">LOST & FOUND</span>
+
+            <h3>Looking for something?</h3>
+
+            <p>
+                Learn how to search for an item
+                or submit a claim.
+            </p>
+
+            <button
+                type="button"
+                class="secondary-btn help-action-btn"
+                data-help="lost-found"
+            >
+                Learn More →
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <!-- NOTIFICATIONS -->
+
+    <article class="help-card">
+
+        <div class="help-card-icon">🔔</div>
+
+        <div class="help-card-content">
+
+            <span class="section-label">NOTIFICATIONS</span>
+
+            <h3>Stay informed</h3>
+
+            <p>
+                Learn how to manage notifications
+                and mark updates as read.
+            </p>
+
+            <button
+                type="button"
+                class="secondary-btn help-action-btn"
+                data-help="notifications"
+            >
+                View Help →
+            </button>
+
+        </div>
+
+    </article>
+
+</div>
+
+
+<!-- HELP CONTENT -->
+
+<div
+    id="helpContent"
+    class="help-content-panel"
+    style="display:none;"
+></div>
+
+
+<!-- CONTACT SCHOOL SUPPORT -->
+
+<section class="contact-support-card">
+
+    <div class="contact-support-icon">
+        💬
+    </div>
+
+    <div class="contact-support-content">
+
+        <span class="section-label">
+            SCHOOL SUPPORT
+        </span>
+
+        <h2>Contact School Support</h2>
+
+        <p>
+            Need help with something that isn't covered here?
+            Contact your teacher or school administrator.
+        </p>
+
+        <button
+            type="button"
+            class="primary-btn"
+            id="contactSupportBtn"
+        >
+            Contact Support →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT MODAL -->
+
+<div
+    id="supportModal"
+    class="support-modal"
+>
+
+    <div class="support-modal-content">
+
+        <button
+            type="button"
+            class="support-modal-close"
+            id="supportModalClose"
+        >
+            ×
+        </button>
+
+        <span class="section-label">
+            SCHOOL SUPPORT
+        </span>
+
+        <h2>How can we help?</h2>
+
+        <p>
+            Send a message to your school support team.
+        </p>
+
+        <form id="supportForm">
+
+            <div class="form-group">
+
+                <label for="supportSubject">
+                    Subject
+                </label>
+
+                <input
+                    type="text"
+                    id="supportSubject"
+                    placeholder="What do you need help with?"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="supportMessage">
+                    Message
+                </label>
+
+                <textarea
+                    id="supportMessage"
+                    rows="5"
+                    placeholder="Describe your issue..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-btn"
+            >
+                Send Request
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</section>
+
+<section id="profilePage" class="portal-section"></section>
+
+    </main>
+
+<!-- CLAIM MODAL -->
+
+<div class="claim-modal" id="claimModal">
+
+    <div class="claim-modal-content">
+
+        <button class="claim-modal-close" id="claimModalClose">
+            ×
+        </button>
+
+        <span class="section-label">LOST & FOUND CLAIM</span>
+
+        <h2>Is this your item?</h2>
+
+        <p class="claim-warning">
+            All items are verified by the school. Please don't share
+            private contact details publicly.
+        </p>
+
+        <form id="claimForm">
+
+            <div class="form-group">
+                <label for="claimFullName">Full Name</label>
+                <input
+                    type="text"
+                    id="claimFullName"
+                    placeholder="Enter your full name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="claimClass">Class</label>
+                <input
+                    type="text"
+                    id="claimClass"
+                    placeholder="Enter your class"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="claimContact">Contact Information</label>
+                <input
+                    type="text"
+                    id="claimContact"
+                    placeholder="School email or class teacher"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="claimReason">Why is this yours?</label>
+                <textarea
+                    id="claimReason"
+                    placeholder="Describe something that helps verify this item belongs to you..."
+                    required
+                ></textarea>
+            </div>
+
+            <button type="submit" class="login-submit">
+                Submit Claim
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+    <!-- SUPABASE -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- NAVENTRA SCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
